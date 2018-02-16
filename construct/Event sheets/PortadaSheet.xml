@@ -386,24 +386,16 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="30252388508815">
+        <event-block any="1" sid="30252388508815">
             <conditions>
                 <condition id="3" name="On touched object" sid="6116731889685158" type="Touch">
                     <param id="0" name="Object">Portada_Fondo</param>
                 </condition>
+                <condition id="1" name="On any click" sid="4506605856986167" type="Mouse" />
+                <condition id="1" name="On any key pressed" sid="426630766953629" type="Keyboard" />
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="3957402081244197" type="System">
-                    <param id="0" name="Layout">Demo</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5013189021819781">
-            <conditions>
-                <condition id="1" name="On any click" sid="4506605856986167" type="Mouse" />
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="8218894802266344" type="System">
                     <param id="0" name="Layout">Demo</param>
                 </action>
             </actions>

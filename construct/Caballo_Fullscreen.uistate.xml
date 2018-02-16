@@ -12,9 +12,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="0">Cuadricula</layout>
         <layout order="1">Demo</layout>
-        <layout active="1" order="2">Portada</layout>
+        <layout order="2">Portada</layout>
         <layout order="3">Winner</layout>
-        <event-sheet order="4">MainSheet</event-sheet>
+        <event-sheet active="1" order="4">MainSheet</event-sheet>
         <event-sheet order="5">DemoSheet</event-sheet>
         <event-sheet order="6">PortadaSheet</event-sheet>
         <event-sheet order="7">WinnerSheet</event-sheet>

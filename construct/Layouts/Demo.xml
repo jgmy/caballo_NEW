@@ -1141,6 +1141,7 @@
                     <instance-variables>
                         <dragging>false</dragging>
                         <moving>false</moving>
+                        <keydrag>false</keydrag>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />

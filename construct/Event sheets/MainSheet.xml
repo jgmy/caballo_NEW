@@ -22,6 +22,7 @@
         <variable constant="0" name="LastSolX" sid="3416587291476356" static="0" type="number">0</variable>
         <variable comment="Solution X" constant="0" name="SolX" sid="8340002217675292" static="0" type="number">0</variable>
         <variable comment="Solution Y" constant="0" name="SolY" sid="48747230695958" static="0" type="number">0</variable>
+        <variable comment="Contains all proverbs for current locale" constant="0" name="TodosLosRefranes" sid="986928960588119" static="0" type="text"></variable>
         <variable comment="Stores text at salida.text in undo loops" constant="0" name="TempSalida" sid="383816947528259" static="0" type="text"></variable>
         <event-group description="This group stores initialization routines." sid="764744746406693" title="InitialGroup">
             <sub-events>
@@ -326,6 +327,39 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="920678016629469">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="798767545589188" type="System">
+                                    <param id="0" name="Object">Refranes</param>
+                                    <param id="1" name="Expression">Refranes.lang</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">lowercase(left(Browser.Language,2))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="700624755956122" type="System">
+                                    <param id="0" name="Variable">TodosLosRefranes</param>
+                                    <param id="1" name="Value">Refranes.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="987541545009164">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="502429020908940" type="System" />
+                                <condition id="-33" name="Pick by comparison" sid="762833570568314" type="System">
+                                    <param id="0" name="Object">Refranes</param>
+                                    <param id="1" name="Expression">Refranes.lang</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">&quot;es&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="239480930085893" type="System">
+                                    <param id="0" name="Variable">TodosLosRefranes</param>
+                                    <param id="1" name="Value">Refranes.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="2594875718710585">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="3315647752874204" type="System">
@@ -343,7 +377,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="3395703379093147" type="System">
                                     <param id="0" name="Variable">Refran</param>
-                                    <param id="1" name="Value">tokenat(Refranes.Text,RefranLine,newline)</param>
+                                    <param id="1" name="Value">tokenat(Todoslosrefranes,RefranLine,newline)</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="2087140876131438" type="System">
                                     <param id="0" name="Variable">RefranPretty</param>
@@ -802,6 +836,14 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="548265284616949">
+                    <conditions>
+                        <condition id="17" name="On back button" sid="873138659168616" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="171554378040530" type="Browser" />
+                    </actions>
+                </event-block>
                 <event-block sid="8179112901469141">
                     <conditions>
                         <condition id="0" name="On any touch start" sid="8107131545399645" type="Touch" />
@@ -885,6 +927,123 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="347183960668881">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="844083519941669" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="408479950721833" type="Caballito">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">(4.5*StepX)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="824178411678664" type="Caballito">
+                            <param id="0" name="X">StepX*(int(Caballito.X/StepX)+1.5 )</param>
+                            <param id="1" name="Y">StepY*(int(Caballito.Y/StepY)+0.5 )</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="141152808053185" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="382190806407924" type="Caballito">
+                            <param id="0" name="Instance variable">keydrag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="258683342373781">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="920317274577194" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="647098962690150" type="Caballito">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">(0.5*StepX)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="111137003350557" type="Caballito">
+                            <param id="0" name="X">StepX*(int(Caballito.X/StepX)-0.5 )</param>
+                            <param id="1" name="Y">StepY*(int(Caballito.Y/StepY)+0.5 )</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="601241772233834" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="224196227318220" type="Caballito">
+                            <param id="0" name="Instance variable">keydrag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="487581084482585">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="464016111249814" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="894352325436993" type="Caballito">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">StepY*3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="352373553846084" type="Caballito">
+                            <param id="0" name="X">StepX*(int(Caballito.X/StepX)+0.5 )</param>
+                            <param id="1" name="Y">StepY*(int(Caballito.Y/StepY)+1.5 )</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="360254567243085" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="190213696045375" type="Caballito">
+                            <param id="0" name="Instance variable">keydrag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="651114921811498">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="722852079511696" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="492711721187032" type="Caballito">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">StepY</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="736196069522054" type="Caballito">
+                            <param id="0" name="X">StepX*(int(Caballito.X/StepX)+0.5 )</param>
+                            <param id="1" name="Y">StepY*(int(Caballito.Y/StepY)-0.5 )</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="605504362613625" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="882270000643898" type="Caballito">
+                            <param id="0" name="Instance variable">keydrag</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="431404448646762">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="520266948941659" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="969137776461373" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="656628134333783" type="Caballito">
+                            <param id="0" name="Instance variable">moving</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="5336772209944152">
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="256998815854518" type="Caballito">
@@ -907,6 +1066,9 @@
                         <event-block sid="9554966481564712">
                             <conditions>
                                 <condition id="2" inverted="1" name="Is in touch" sid="2136702335023639" type="Touch" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="201675833693706" type="Caballito">
+                                    <param id="0" name="Instance variable">keydrag</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="5499673455318295" type="Caballito">
@@ -1513,206 +1675,134 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9757640452612442">
+                <comment>undo</comment>
+                <event-block sid="114893233661098">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="5932040076013623" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">UndoButton</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="8999878536579506" type="System">
+                        <condition id="-14" name="Compare variable" sid="911287808310305" type="System">
                             <param id="0" name="Variable">pointer</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="3" name="Set at XY" sid="6979063530934385" type="Board_Array">
-                            <param id="0" name="X">Steps_array.At(pointer,0)</param>
-                            <param id="1" name="Y">Steps_array.At(pointer,1)</param>
-                            <param id="2" name="Value">0</param>
-                        </action>
-                        <action id="-11" name="Subtract from" sid="850099904472578" type="System">
-                            <param id="0" name="Variable">pointer</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-12" name="Set group active" sid="8016756820309864" type="System">
-                            <param id="0" name="Group name">&quot;UndoGroup&quot;</param>
-                            <param id="1" name="State">1</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="9416523907499867" type="Caballito">
-                            <param id="0" name="X">StepX*(0.5+Steps_array.At(pointer,0))</param>
-                            <param id="1" name="Y">StepY*(0.5+Steps_array.At(pointer,0))</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
-                        <event-group description="" sid="3704449265805517" title="UndoGroup">
+                        <event-block any="1" sid="9757640452612442">
+                            <conditions>
+                                <condition disabled="1" id="6" name="On object clicked" sid="5932040076013623" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">UndoButton</param>
+                                </condition>
+                                <condition id="3" name="On touched object" sid="8882166460468153" type="Touch">
+                                    <param id="0" name="Object">UndoButton</param>
+                                </condition>
+                                <condition id="4" name="On key code pressed" sid="559713435371992" type="Keyboard">
+                                    <param id="0" name="Keycode">177</param>
+                                </condition>
+                                <condition id="4" name="On key code pressed" sid="362858339136934" type="Keyboard">
+                                    <param id="0" name="Keycode">227</param>
+                                </condition>
+                                <condition id="0" name="On key pressed" sid="449865975047486" type="Keyboard">
+                                    <param id="0" name="Key">48</param>
+                                </condition>
+                                <condition id="0" name="On key pressed" sid="718862463107874" type="Keyboard">
+                                    <param id="0" name="Key">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="6979063530934385" type="Board_Array">
+                                    <param id="0" name="X">Steps_array.At(pointer,0)</param>
+                                    <param id="1" name="Y">Steps_array.At(pointer,1)</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="850099904472578" type="System">
+                                    <param id="0" name="Variable">pointer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8016756820309864" type="System">
+                                    <param id="0" name="Group name">&quot;UndoGroup&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="9416523907499867" type="Caballito">
+                                    <param id="0" name="X">StepX*(0.5+Steps_array.At(pointer,0))</param>
+                                    <param id="1" name="Y">StepY*(0.5+Steps_array.At(pointer,0))</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="5876305035549957">
-                                    <conditions>
-                                        <condition id="-15" name="Pick nearest/furthest" sid="430458363222969" type="Equis">
-                                            <param id="0" name="Which">0</param>
-                                            <param id="1" name="X">(Steps_array.At(pointer,0)+0.5)*StepX</param>
-                                            <param id="2" name="Y">(Steps_array.At(pointer,1)+0.5)*StepY</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="6810199569918555" type="Equis" />
-                                        <action id="-9" name="Set value" sid="4823954716170431" type="System">
-                                            <param id="0" name="Variable">TempSalida</param>
-                                            <param id="1" name="Value">Salida.Text</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="7140972270521048" type="Salida">
-                                            <param id="0" name="Text">&quot;&quot;</param>
-                                        </action>
-                                        <action id="1" name="Append text" sid="5353508807519214" type="Debug">
-                                            <param id="0" name="Text">&quot;undo&quot; &amp; newline</param>
-                                        </action>
-                                    </actions>
+                                <event-group description="" sid="3704449265805517" title="UndoGroup">
                                     <sub-events>
-                                        <event-block sid="7976431348714857">
+                                        <event-block sid="5876305035549957">
                                             <conditions>
-                                                <condition id="-10" name="For" sid="6308274560709053" type="System">
-                                                    <param id="0" name="Name">&quot;rebuildindex&quot;</param>
-                                                    <param id="1" name="Start index">0</param>
-                                                    <param id="2" name="End index">pointer</param>
+                                                <condition id="-15" name="Pick nearest/furthest" sid="430458363222969" type="Equis">
+                                                    <param id="0" name="Which">0</param>
+                                                    <param id="1" name="X">(Steps_array.At(pointer,0)+0.5)*StepX</param>
+                                                    <param id="2" name="Y">(Steps_array.At(pointer,1)+0.5)*StepY</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="1" name="Append text" sid="9421999892078605" type="Salida">
-                                                    <param id="0" name="Text">tokenat(TempSalida,loopindex(&quot;rebuildindex&quot;),&quot;-&quot;)</param>
+                                                <action id="-9" name="Destroy" sid="6810199569918555" type="Equis" />
+                                                <action id="-9" name="Set value" sid="4823954716170431" type="System">
+                                                    <param id="0" name="Variable">TempSalida</param>
+                                                    <param id="1" name="Value">Salida.Text</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="7140972270521048" type="Salida">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="5353508807519214" type="Debug">
+                                                    <param id="0" name="Text">&quot;undo&quot; &amp; newline</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="778746128882155" type="Board_Array">
+                                                    <param id="0" name="X">Steps_array.At(pointer,0)</param>
+                                                    <param id="1" name="Y">Steps_array.At(pointer,1)</param>
+                                                    <param id="2" name="Value">0</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="5960630735091361">
+                                                <event-block sid="7976431348714857">
                                                     <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="8869431526675889" type="System">
-                                                            <param id="0" name="First value">loopindex(&quot;rebuildindex&quot;)</param>
-                                                            <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">pointer</param>
+                                                        <condition id="-10" name="For" sid="6308274560709053" type="System">
+                                                            <param id="0" name="Name">&quot;rebuildindex&quot;</param>
+                                                            <param id="1" name="Start index">0</param>
+                                                            <param id="2" name="End index">pointer</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="1" name="Append text" sid="2527989389572369" type="Salida">
-                                                            <param id="0" name="Text">&quot;-&quot;</param>
+                                                        <action id="1" name="Append text" sid="9421999892078605" type="Salida">
+                                                            <param id="0" name="Text">tokenat(TempSalida,loopindex(&quot;rebuildindex&quot;),&quot;-&quot;)</param>
                                                         </action>
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="5960630735091361">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="8869431526675889" type="System">
+                                                                    <param id="0" name="First value">loopindex(&quot;rebuildindex&quot;)</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Second value">pointer</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="1" name="Append text" sid="2527989389572369" type="Salida">
+                                                                    <param id="0" name="Text">&quot;-&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="9990909530035455">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-12" name="Set group active" sid="2034942481190876" type="System">
-                                            <param id="0" name="Group name">&quot;UndoGroup&quot;</param>
-                                            <param id="1" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-group>
-                    </sub-events>
-                </event-block>
-                <event-block sid="813897444705202">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="8882166460468153" type="Touch">
-                            <param id="0" name="Object">UndoButton</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="8085050652388671" type="System">
-                            <param id="0" name="Variable">pointer</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="3" name="Set at XY" sid="4657130475755453" type="Board_Array">
-                            <param id="0" name="X">Steps_array.At(pointer,0)</param>
-                            <param id="1" name="Y">Steps_array.At(pointer,1)</param>
-                            <param id="2" name="Value">0</param>
-                        </action>
-                        <action id="-11" name="Subtract from" sid="5989561503581454" type="System">
-                            <param id="0" name="Variable">pointer</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-12" name="Set group active" sid="9027823347532955" type="System">
-                            <param id="0" name="Group name">&quot;UndoGroup2&quot;</param>
-                            <param id="1" name="State">1</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="4115981178099615" type="Caballito">
-                            <param id="0" name="X">StepX*(0.5+Steps_array.At(pointer,0))</param>
-                            <param id="1" name="Y">StepY*(0.5+Steps_array.At(pointer,0))</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-group description="" sid="127786776476774" title="UndoGroup2">
-                            <sub-events>
-                                <event-block sid="4580741920237882">
-                                    <conditions>
-                                        <condition id="-15" name="Pick nearest/furthest" sid="5565757653270168" type="Equis">
-                                            <param id="0" name="Which">0</param>
-                                            <param id="1" name="X">(Steps_array.At(pointer,0)+0.5)*StepX</param>
-                                            <param id="2" name="Y">(Steps_array.At(pointer,1)+0.5)*StepY</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="6035809922583907" type="Equis" />
-                                        <action id="-9" name="Set value" sid="6879593447389428" type="System">
-                                            <param id="0" name="Variable">TempSalida</param>
-                                            <param id="1" name="Value">Salida.Text</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="9929717485580797" type="Salida">
-                                            <param id="0" name="Text">&quot;&quot;</param>
-                                        </action>
-                                        <action id="1" name="Append text" sid="9771621597577804" type="Debug">
-                                            <param id="0" name="Text">&quot;undo&quot; &amp; newline</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="9266986148779894">
-                                            <conditions>
-                                                <condition id="-10" name="For" sid="5511281693518984" type="System">
-                                                    <param id="0" name="Name">&quot;rebuildindex&quot;</param>
-                                                    <param id="1" name="Start index">0</param>
-                                                    <param id="2" name="End index">pointer</param>
-                                                </condition>
-                                            </conditions>
+                                        <event-block sid="9990909530035455">
+                                            <conditions />
                                             <actions>
-                                                <action id="1" name="Append text" sid="8560150674120855" type="Salida">
-                                                    <param id="0" name="Text">tokenat(TempSalida,loopindex(&quot;rebuildindex&quot;),&quot;-&quot;)</param>
+                                                <action id="-12" name="Set group active" sid="2034942481190876" type="System">
+                                                    <param id="0" name="Group name">&quot;UndoGroup&quot;</param>
+                                                    <param id="1" name="State">0</param>
                                                 </action>
                                             </actions>
-                                            <sub-events>
-                                                <event-block sid="8121528948341527">
-                                                    <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="6821873274091473" type="System">
-                                                            <param id="0" name="First value">loopindex(&quot;rebuildindex&quot;)</param>
-                                                            <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">pointer</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="1" name="Append text" sid="2891153518757075" type="Salida">
-                                                            <param id="0" name="Text">&quot;-&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="3511738264116373">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-12" name="Set group active" sid="2541440531417255" type="System">
-                                            <param id="0" name="Group name">&quot;UndoGroup2&quot;</param>
-                                            <param id="1" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
+                                </event-group>
                             </sub-events>
-                        </event-group>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>

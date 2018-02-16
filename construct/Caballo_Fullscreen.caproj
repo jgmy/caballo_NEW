@@ -2,20 +2,20 @@
 <c2project>
     <name>Caballo_Fullscreen</name>
     <description>Salto del Caballo, el pasatiempo clásico.</description>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <author>Jose Gabriel Moya Yangüela</author>
-    <author-email></author-email>
-    <author-website></author-website>
-    <app-id></app-id>
+    <author-email>saltocaballo@apagada.com</author-email>
+    <author-website>http://josemoya.blogspot.com</author-website>
+    <app-id>com.josemoyablogspotcom.caballofull</app-id>
     <unique-id>gi98tkofbp42</unique-id>
-    <saved-with-version>13000</saved-with-version>
+    <saved-with-version>20000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
@@ -29,6 +29,7 @@
         <height>600</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
     <first-layout>Portada</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
@@ -39,7 +40,7 @@
         <prop name="Preview mode">HTTP</prop>
         <prop name="Sampling">Linear</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder>
         <object-type name="Caballito" sid="9020583566536044">
             <plugin id="Sprite" />
             <instance-variables>
@@ -51,58 +52,58 @@
                     <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5980973138071857" speed="5">
-                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.268293" y="0.22" />
-                            <point x="0.487805" y="0.04" />
-                            <point x="0.829268" y="0.14" />
-                            <point x="0.682927" y="0.5" />
-                            <point x="0.926829" y="0.94" />
-                            <point x="0.487805" y="1" />
-                            <point x="0.0731707" y="0.94" />
-                            <point x="0.0243902" y="0.5" />
+                            <point x="0.32" y="0.22" />
+                            <point x="0.5" y="0.04" />
+                            <point x="0.78" y="0.14" />
+                            <point x="0.66" y="0.5" />
+                            <point x="0.86" y="0.94" />
+                            <point x="0.5" y="1" />
+                            <point x="0.16" y="0.94" />
+                            <point x="0.12" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="Transp" pingpong="0" repeatcount="1" repeatto="0" sid="5964361726439991" speed="5">
-                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.219512" y="0.18" />
-                            <point x="0.487805" y="0.1" />
-                            <point x="0.756098" y="0.2" />
-                            <point x="0.634146" y="0.5" />
-                            <point x="0.487805" y="0.98" />
-                            <point x="0.585366" y="0.52" />
-                            <point x="0.0487805" y="0.5" />
+                            <point x="0.28" y="0.18" />
+                            <point x="0.5" y="0.1" />
+                            <point x="0.72" y="0.2" />
+                            <point x="0.62" y="0.5" />
+                            <point x="0.5" y="0.98" />
+                            <point x="0.58" y="0.52" />
+                            <point x="0.14" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="DefaultBig" pingpong="0" repeatcount="1" repeatto="0" sid="6491555401633063" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501567">
+                    <frame duration="1" hotspotX="0.498433" hotspotY="0.501567">
                         <collision-poly>
-                            <point x="0.188462" y="0.153605" />
-                            <point x="0.5" y="0.0532915" />
-                            <point x="0.803846" y="0.159875" />
-                            <point x="0.642308" y="0.498433" />
-                            <point x="0.923077" y="0.937304" />
-                            <point x="0.5" y="1" />
-                            <point x="0.0653846" y="0.946708" />
-                            <point x="0.0307692" y="0.498433" />
+                            <point x="0.244514" y="0.153605" />
+                            <point x="0.498433" y="0.0532915" />
+                            <point x="0.746081" y="0.159875" />
+                            <point x="0.61442" y="0.498433" />
+                            <point x="0.84326" y="0.937304" />
+                            <point x="0.498433" y="1" />
+                            <point x="0.144201" y="0.946708" />
+                            <point x="0.115987" y="0.498433" />
                         </collision-poly>
                     </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="TranspBig" pingpong="0" repeatcount="1" repeatto="0" sid="9484530112714744" speed="5">
-                    <frame duration="1" hotspotX="0.501901" hotspotY="0.501558">
+                    <frame duration="1" hotspotX="0.501558" hotspotY="0.501558">
                         <collision-poly>
-                            <point x="0.209125" y="0.17134" />
-                            <point x="0.498099" y="0.0903427" />
-                            <point x="1" y="0" />
-                            <point x="1" y="1" />
-                            <point x="0.498099" y="0.987539" />
-                            <point x="0.0836502" y="0.931464" />
-                            <point x="0.0304183" y="0.498442" />
+                            <point x="0.261682" y="0.17134" />
+                            <point x="0.498442" y="0.0903427" />
+                            <point x="0.909657" y="0" />
+                            <point x="0.909657" y="1" />
+                            <point x="0.498442" y="0.987539" />
+                            <point x="0.158879" y="0.931464" />
+                            <point x="0.115265" y="0.498442" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -114,7 +115,7 @@
                 <instance-variable comment="Logical Row" name="Row" sid="379560734974476" type="number" />
                 <instance-variable comment="Logical Column" name="Col" sid="9586019273651577" type="number" />
             </instance-variables>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6457463977754152" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -138,7 +139,7 @@
         </object-type>
         <object-type name="UndoButton" sid="2278115886488702">
             <plugin id="Sprite" />
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4080236562743156" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
@@ -163,7 +164,7 @@
         </object-type>
         <object-type name="Equis" sid="7179151224198847">
             <plugin id="Sprite" />
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6414822897277322" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
@@ -243,7 +244,7 @@
         </object-type>
         <object-type name="Cartela" sid="6030447401952209">
             <plugin id="Sprite" />
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8910040871042637" speed="5">
                     <frame duration="1" hotspotX="0.5008" hotspotY="0.502825">
                         <collision-poly>
@@ -275,13 +276,13 @@
         </object-type>
     </object-folder>
     <families />
-    <layout-folder expanded="0">
+    <layout-folder>
         <layout>Cuadricula.xml</layout>
         <layout>Winner.xml</layout>
         <layout>Demo.xml</layout>
         <layout>Portada.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder>
         <event-sheet>MainSheet.xml</event-sheet>
         <event-sheet>WinnerSheet.xml</event-sheet>
         <event-sheet>DemoSheet.xml</event-sheet>
@@ -295,7 +296,16 @@
         </global-instance>
         <global-instance type="Mouse" uid="100" />
     </global-instances>
-    <sounds-folder expanded="1" />
-    <music-folder expanded="1" />
-    <files-folder expanded="1" />
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
 </c2project>

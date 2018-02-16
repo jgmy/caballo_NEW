@@ -17,6 +17,10 @@
                 <action id="-1" name="Set X" sid="5397511312862516" type="Explanation">
                     <param id="0" name="X">LayoutWidth/2</param>
                 </action>
+                <action id="-7" name="Scroll to position" sid="8521625902362962" type="System">
+                    <param id="0" name="X">320</param>
+                    <param id="1" name="Y">240</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="5113002388032178">

@@ -99,6 +99,11 @@
                             <param id="0" name="Group name">&quot;SolutionGrpDmo&quot;</param>
                             <param id="1" name="State">1</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="114426721588924" type="Equis" />
+                        <action id="-7" name="Scroll to position" sid="9931652927350685" type="System">
+                            <param id="0" name="X">StepX2*2</param>
+                            <param id="1" name="Y">StepY2*2</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="7205407219800464">
@@ -115,7 +120,7 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="2796180208426076" type="Caballito">
-                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="0" name="Width">StepX2*50/60</param>
                                     <param id="1" name="Height">StepY2*50/60</param>
                                 </action>
                             </actions>
@@ -134,7 +139,7 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="1786539166554266" type="Caballito">
-                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="0" name="Width">StepX2*50/60</param>
                                     <param id="1" name="Height">StepY2*50/60</param>
                                 </action>
                             </actions>
@@ -675,7 +680,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Initialize Mov array, needed for Solutions" inactive="1" sid="5237020189056627" title="MovGrpDmo">
+        <event-group description="Initialize Mov array, needed for Solutions" inactive="1" sid="5237020189056627" title="MovGrpDmo">
             <sub-events>
                 <comment>Initialize Mov</comment>
                 <event-block sid="5413409284997885">
@@ -772,7 +777,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description='Text Scroll for debug control &quot;Text&quot;' sid="5958771962971528" title="TextScroll">
+        <event-group description='Text Scroll for debug control &quot;Text&quot;' sid="5958771962971528" title="TextScroll">
             <sub-events>
                 <event-block sid="6497542697572938">
                     <conditions>
@@ -874,7 +879,7 @@
                 </event-block>
                 <comment>Is the horse moving? Where is the horse?</comment>
                 <comment>MoverX2&lt;&gt;Caballito.X OR MoverY2&lt;&gt;Caballito.Y</comment>
-                <event-block collapsed="1" sid="2163154771207805">
+                <event-block sid="2163154771207805">
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="1115476043883794" type="Caballito">
                             <param id="0" name="Instance variable">dragging</param>
@@ -1018,6 +1023,10 @@
                                                 </action>
                                                 <action id="-13" name="Set boolean" sid="8106211102946154" type="Caballito">
                                                     <param id="0" name="Instance variable">moving</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="8980774011024468" type="Caballito">
+                                                    <param id="0" name="Instance variable">dragging</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
@@ -1166,6 +1175,10 @@
                                                     <param id="0" name="Instance variable">moving</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
+                                                <action id="-13" name="Set boolean" sid="6743796073989071" type="Caballito">
+                                                    <param id="0" name="Instance variable">dragging</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
                                             </actions>
                                             <sub-events>
                                                 <event-block sid="7594522835887878">
@@ -1264,7 +1277,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="8610469361476806">
+                <event-block sid="8610469361476806">
                     <conditions>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3077417651031901" type="Caballito">
                             <param id="0" name="Instance variable">dragging</param>
@@ -1285,7 +1298,7 @@
                                 <condition id="-8" name="Compare two values" sid="1355098510169206" type="System">
                                     <param id="0" name="First value">StepX2</param>
                                     <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">240</param>
+                                    <param id="2" name="Second value">120</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1304,7 +1317,7 @@
                                 <condition id="-8" name="Compare two values" sid="6347244274323253" type="System">
                                     <param id="0" name="First value">StepX2</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">240</param>
+                                    <param id="2" name="Second value">120</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1449,7 +1462,7 @@
                                 </action>
                                 <action id="-24" name="Move to top" sid="8625711570972983" type="Cartela" />
                                 <action id="-24" name="Move to top" sid="5824471303148606" type="Instrucciones" />
-                                <action id="-12" name="Set group active" sid="4276644830460262" type="System">
+                                <action disabled="1" id="-12" name="Set group active" sid="4276644830460262" type="System">
                                     <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
                                     <param id="1" name="State">0</param>
                                 </action>
@@ -1500,7 +1513,7 @@
                                 </action>
                                 <action id="-24" name="Move to top" sid="5137828762247606" type="Cartela" />
                                 <action id="-24" name="Move to top" sid="7132267728303184" type="Instrucciones" />
-                                <action id="-12" name="Set group active" sid="2909569985601801" type="System">
+                                <action disabled="1" id="-12" name="Set group active" sid="2909569985601801" type="System">
                                     <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
                                     <param id="1" name="State">0</param>
                                 </action>
@@ -1544,6 +1557,15 @@
                             <actions>
                                 <action id="-15" name="Set visible" sid="6077305893005487" type="TileText">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7165093053588663">
+                            <conditions />
+                            <actions>
+                                <action id="-12" name="Set group active" sid="2898296670966502" type="System">
+                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                                    <param id="1" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>

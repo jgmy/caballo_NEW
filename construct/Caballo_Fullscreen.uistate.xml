@@ -10,14 +10,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout>Cuadricula</layout>
-        <layout>Demo</layout>
-        <layout>Portada</layout>
-        <layout>Winner</layout>
-        <event-sheet>MainSheet</event-sheet>
-        <event-sheet active="1">DemoSheet</event-sheet>
-        <event-sheet>PortadaSheet</event-sheet>
-        <event-sheet>WinnerSheet</event-sheet>
+        <layout order="0">Cuadricula</layout>
+        <layout order="1">Demo</layout>
+        <layout active="1" order="2">Portada</layout>
+        <layout order="3">Winner</layout>
+        <event-sheet order="4">MainSheet</event-sheet>
+        <event-sheet order="5">DemoSheet</event-sheet>
+        <event-sheet order="6">PortadaSheet</event-sheet>
+        <event-sheet order="7">WinnerSheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -26,4 +26,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Caballito/" />
+        <folder expanded="1" path="animation-folder/Cuadrito/" />
+        <folder expanded="1" path="animation-folder/UndoButton/" />
+        <folder expanded="1" path="animation-folder/Equis/" />
+        <folder expanded="1" path="animation-folder/Cartela/" />
+    </folders-expanded>
 </c2uistate>

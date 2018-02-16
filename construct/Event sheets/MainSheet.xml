@@ -96,8 +96,13 @@
                             <param id="0" name="Width">StepX</param>
                             <param id="1" name="Height">StepY</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="548727788391335" type="Equis" />
                         <action disabled="1" id="1" name="Set blend mode" sid="8229903521809227" type="Caballito">
                             <param id="0" name="Blend mode">2</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="2438596817528475" type="System">
+                            <param id="0" name="X">StepX*2.5</param>
+                            <param id="1" name="Y">StepY*2</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -115,7 +120,7 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="7682396523438005" type="Caballito">
-                                    <param id="0" name="Width">StepX*41/60</param>
+                                    <param id="0" name="Width">StepX*50/60</param>
                                     <param id="1" name="Height">StepY*50/60</param>
                                 </action>
                             </actions>
@@ -134,7 +139,7 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="2243731032621393" type="Caballito">
-                                    <param id="0" name="Width">StepX*41/60</param>
+                                    <param id="0" name="Width">StepX*50/60</param>
                                     <param id="1" name="Height">StepY*50/60</param>
                                 </action>
                             </actions>
@@ -407,7 +412,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-group collapsed="1" description="Initialize Mov array, needed for Solutions" sid="5900465393077201" title="MovGroup">
+                        <event-group description="Initialize Mov array, needed for Solutions" sid="5900465393077201" title="MovGroup">
                             <sub-events>
                                 <comment>Initialize Mov</comment>
                                 <event-block sid="2346772047275276">
@@ -760,7 +765,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description='Text Scroll for debug control &quot;Text&quot;' sid="5944385162813409" title="TextScroll">
+        <event-group description='Text Scroll for debug control &quot;Text&quot;' sid="5944385162813409" title="TextScroll">
             <sub-events>
                 <event-block sid="3876444731769969">
                     <conditions>
@@ -815,7 +820,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" disabled="1" sid="963376151512695">
+                <event-block disabled="1" sid="963376151512695">
                     <conditions>
                         <condition disabled="1" id="2" name="Is in touch" sid="8839145669129916" type="Touch" />
                         <condition disabled="1" id="-8" name="Is boolean instance variable set" sid="304142436259578" type="Caballito">
@@ -1377,6 +1382,10 @@
                                                     <param id="1" name="Layer">&quot;Letras&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="4" name="Set animation" sid="7477585697991143" type="Equis">
+                                                    <param id="0" name="Animation">StepX&lt;=120 ? &quot;Default&quot;:&quot;DefaultG&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
                                                 <action id="-7" name="Set size" sid="623504675453012" type="Equis">
                                                     <param id="0" name="Width">StepX</param>
                                                     <param id="1" name="Height">StepY</param>
@@ -1504,7 +1513,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="9757640452612442">
+                <event-block sid="9757640452612442">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="5932040076013623" type="Mouse">
                             <param id="0" name="Mouse button">0</param>

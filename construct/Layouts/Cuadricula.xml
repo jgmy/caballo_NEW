@@ -11,7 +11,7 @@
         <horizontal>0</horizontal>
         <vertical>0</vertical>
     </margins>
-    <unbounded-scrolling>0</unbounded-scrolling>
+    <unbounded-scrolling>1</unbounded-scrolling>
     <layers>
         <layer name="Cuadros" sid="5659046826652569">
             <initially-visible>1</initially-visible>
@@ -24,6 +24,8 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
@@ -489,7 +491,7 @@
                 </instance>
                 <instance type="Refranes" uid="18">
                     <properties>
-                        <text>A-buen-en-ten-de-dor-po-cas-pa-la-bras-bas-tan|A buen entendedor, pocas palabras bastan|Quien es discreto, no necesita grandes explicaciones.#A-ca-ba-llo-re-ga-la-do-no-le-mi-res-el-dien-te|A caballo regalado, no le mires el diente|Se pueden disculpar los defectos en aquello que nada cuesta#A-ca-da-cer-do-le-lle-ga-su-san-Mar-tín|A cada cerdo le llega su San Martín|Indica que el culpable pagará su ofensa, aunque sea tarde#A-Dios-ro-gan-do-y-con-el-ma-zo-dan-do|A Dios rogando y con el mazo dando|No nos dará la fortuna lo que no obtengamos con nuestro esfuerzo.#A-gos-to-y-Sep-tiem-bre-no-du-ran-siem-pre.|Agosto y septiembre no duran siempre|Hay que guardar la cosecha para todo el año.#A-gua-co-rrien-te-no-ma-ta-a-la-gen-te|Agua corriente, no mata a la gente|Basada en la creencia común de que el agua de los arroyos es potable.#A-gua-de-ma-yo-no-ca-la-el-sa-yo|Hasta el cuarenta de mayo, no te quites el sayo|Hasta principios de junio sigue haciendo mal tiempo#A-gua-que-no-has-de-be-ber-dé-ja-la-co-rrer|Agua que no has de beber, déjala correr|No hay que inmiscuirse en asuntos ajenos#A-in-vier-no-llu-vio-so-ve-ra-no-a-bun-do-so|A invierno lluvioso, verano abundoso|#A-la-ca-ma-no-te-i-rás-sin-sa-ber-u-na-co-sa-más|A la cama no te irás sin saber una cosa más|Siempre se aprenden cosas nuevas#A-quien-Dios-se-la-dé-san-Pe-dro-se-la-ben-di-ga|A quien Dios se la dé, san Pedro se la bendiga|Que acate cada cual su suerte#An-tes-se-pi-lla-al-men-ti-ro-so-que-al-co-jo|Antes se pilla al mentiroso que al cojo|Los embustes siempre se descubren#A-pe-rro-fla-co-to-do-son-pul-gas|A perro flaco, todo son pulgas|La desgracia se ensaña con el débil#Bue-na-es-la-nie-ve-que-en-su-tiem-po-vie-ne|Buena es la nieve que en su tiempo viene|Todo es bueno si sucede oportunamente#Ca-ba-llo-gran-de-an-de-o-no-an-de|Caballo grande, ande o no ande|Por presunción, se descuida la utilidad#Ca-ba-llo-que-vue-la-no-quie-re-es-pue-la|Caballo que vuela no conoce espuela|Quien es voluntarioso no necesita ser animado#Ca-ba-llo-que-al-can-za-pa-sar-que-rrí-a|Caballo que alcanza, pasar querría|La ambición no conoce límite#Ca-da-ma-es-tri-llo-tie-ne-su-li-bri-llo|Cada maestrillo tiene su librillo|Cada cual hace las cosas a su manera#Ca-sa-con-dos-puer-tas-ma-la-es-de-guar-dar|Casa con dos puertas, mala es de guardar|#Di-me-con-quién-an-das-y-te-di-ré-quién-e-res|Dime con quien andas y te diré quién eres|La compañía influye grandemente en las costumbres#El-o-jo-del-a-mo-en-gor-da-al-ca-ba-llo|El ojo del amo engorda al caballo|La prosperidad de un negocio requiere de supervisión#En-bo-ca-ce-rra-da-no-en-tran-mos-cas|En boca cerrada, no entran moscas|Se deben callar ciertas cosas#En-ca-sa-de-he-rre-ro-cu-cha-ra-de-pa-lo|En casa de herrero, cuchara de palo|No todo el mundo hace lo que predica#Más-va-le-un-to-ma-que-dos-te-da-ré|Más vale un «toma» que dos «te daré»|Cumplen más las acciones que las promesas#Muer-to-el-pe-rro-se-a-ca-bó-la-ra-bia|Muerto el perro, se acabó la rabia|El problema cesa al desaparecer su causa</text>
+                        <text>A-buen-en-ten-de-dor-po-cas-pa-la-bras-bas-tan|A buen entendedor, pocas palabras bastan|Quien es discreto, no necesita grandes explicaciones.#A-ca-ba-llo-re-ga-la-do-no-le-mi-res-el-dien-te|A caballo regalado, no le mires el diente|Se pueden disculpar los defectos en aquello que nada cuesta#A-ca-da-cer-do-le-lle-ga-su-san-Mar-tín|A cada cerdo le llega su San Martín|Indica que el culpable pagará su ofensa, aunque sea tarde#A-Dios-ro-gan-do-y-con-el-ma-zo-dan-do|A Dios rogando y con el mazo dando|No nos dará la fortuna lo que no obtengamos con nuestro esfuerzo.#A-gos-to-y-Sep-tiem-bre-no-du-ran-siem-pre.|Agosto y septiembre no duran siempre|Hay que guardar la cosecha para todo el año.#A-gua-co-rrien-te-no-ma-ta-a-la-gen-te|Agua corriente, no mata a la gente|Basada en la creencia común de que el agua de los arroyos es potable.#A-gua-de-ma-yo-no-ca-la-el-sa-yo|Agua de mayo no cala el sayo|Indica que algo no nos preocupa#Has-ta-el-cua-ren-ta-de-ma-yo-no-te-qui-tes-el-sa-yo|Hasta el cuarenta de mayo, no te quites el sayo|Hasta principios de junio sigue haciendo mal tiempo#A-gua-que-no-has-de-be-ber-dé-ja-la-co-rrer|Agua que no has de beber, déjala correr|No hay que inmiscuirse en asuntos ajenos#A-in-vier-no-llu-vio-so-ve-ra-no-a-bun-do-so|A invierno lluvioso, verano abundoso|#A-la-ca-ma-no-te-i-rás-sin-sa-ber-u-na-co-sa-más|A la cama no te irás sin saber una cosa más|Siempre se aprenden cosas nuevas#A-quien-Dios-se-la-dé-san-Pe-dro-se-la-ben-di-ga|A quien Dios se la dé, san Pedro se la bendiga|Que acate cada cual su suerte#An-tes-se-pi-lla-al-men-ti-ro-so-que-al-co-jo|Antes se pilla al mentiroso que al cojo|Los embustes siempre se descubren#A-pe-rro-fla-co-to-do-son-pul-gas|A perro flaco, todo son pulgas|La desgracia se ensaña con el débil#Bue-na-es-la-nie-ve-que-en-su-tiem-po-vie-ne|Buena es la nieve que en su tiempo viene|Todo es bueno si sucede oportunamente#Ca-ba-llo-gran-de-an-de-o-no-an-de|Caballo grande, ande o no ande|Por presunción, se descuida la utilidad#Ca-ba-llo-que-vue-la-no-quie-re-es-pue-la|Caballo que vuela no conoce espuela|Quien es voluntarioso no necesita ser animado#Ca-ba-llo-que-al-can-za-pa-sar-que-rrí-a|Caballo que alcanza, pasar querría|La ambición no conoce límite#Ca-da-ma-es-tri-llo-tie-ne-su-li-bri-llo|Cada maestrillo tiene su librillo|Cada cual hace las cosas a su manera#Ca-sa-con-dos-puer-tas-ma-la-es-de-guar-dar|Casa con dos puertas, mala es de guardar|#Di-me-con-quién-an-das-y-te-di-ré-quién-e-res|Dime con quien andas y te diré quién eres|La compañía influye grandemente en las costumbres#El-o-jo-del-a-mo-en-gor-da-al-ca-ba-llo|El ojo del amo engorda al caballo|La prosperidad de un negocio requiere de supervisión#En-bo-ca-ce-rra-da-no-en-tran-mos-cas|En boca cerrada, no entran moscas|Se deben callar ciertas cosas#En-ca-sa-de-he-rre-ro-cu-cha-ra-de-pa-lo|En casa de herrero, cuchara de palo|No todo el mundo hace lo que predica#Más-va-le-un-to-ma-que-dos-te-da-ré|Más vale un «toma» que dos «te daré»|Cumplen más las acciones que las promesas#Muer-to-el-pe-rro-se-a-ca-bó-la-ra-bia|Muerto el perro, se acabó la rabia|El problema cesa al desaparecer su causa.#Cuan-do-u-na-puer-ta-se-cie-rra-o-tra-se-a-bre|Cuando una puerta se cierra, otra se abre|Nunca hay que perder la esperanza.#Pien-sa-el-la-drón-que-to-dos-son-de-su-con-di-ción|Piensa el ladrón que todos son de su condición|El malo se excusa atribuyéndoles a los demás las mismas acciones que él hace.#Nun-ca-di-gas-de-es-ta-a-gua-no-be-be-ré|Nunca digas «de esta agua no beberé»|El futuro puede hacernos caer en lo que hoy criticamos</text>
                         <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
@@ -555,6 +557,8 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
@@ -565,7 +569,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -596,7 +600,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -627,7 +631,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -658,7 +662,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -689,7 +693,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -720,7 +724,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -751,7 +755,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -782,7 +786,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -813,7 +817,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -844,7 +848,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -875,7 +879,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -906,7 +910,7 @@
                         <font>Arial,-17,400,0</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -937,7 +941,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -968,7 +972,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -999,7 +1003,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -1030,7 +1034,7 @@
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -1068,6 +1072,8 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
@@ -1091,10 +1097,10 @@
                         <x>153</x>
                         <y>143</y>
                         <z>0</z>
-                        <width>41</width>
+                        <width>50</width>
                         <height>50</height>
                         <depth>0</depth>
-                        <hotspotX>0.51219511</hotspotX>
+                        <hotspotX>0.519999981</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -1168,6 +1174,8 @@
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances />

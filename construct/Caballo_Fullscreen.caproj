@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Caballo_Fullscreen</name>
+    <description>Salto del Caballo, el pasatiempo clásico.</description>
+    <version>1.1</version>
+    <author>Jose Gabriel Moya Yangüela</author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>gi98tkofbp42</unique-id>
+    <saved-with-version>13000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>600</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <first-layout>Portada</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">On (scale mode)</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Preview mode">HTTP</prop>
+        <prop name="Sampling">Linear</prop>
+    </configuration-settings>
+    <object-folder expanded="1">
+        <object-type name="Caballito" sid="9020583566536044">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="dragging" sid="4769182073610922" type="boolean" />
+                <instance-variable name="moving" sid="6545899577380447" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="9850205020127555">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5980973138071857" speed="5">
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.268293" y="0.22" />
+                            <point x="0.487805" y="0.04" />
+                            <point x="0.829268" y="0.14" />
+                            <point x="0.682927" y="0.5" />
+                            <point x="0.926829" y="0.94" />
+                            <point x="0.487805" y="1" />
+                            <point x="0.0731707" y="0.94" />
+                            <point x="0.0243902" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Transp" pingpong="0" repeatcount="1" repeatto="0" sid="5964361726439991" speed="5">
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.219512" y="0.18" />
+                            <point x="0.487805" y="0.1" />
+                            <point x="0.756098" y="0.2" />
+                            <point x="0.634146" y="0.5" />
+                            <point x="0.487805" y="0.98" />
+                            <point x="0.585366" y="0.52" />
+                            <point x="0.0487805" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DefaultBig" pingpong="0" repeatcount="1" repeatto="0" sid="6491555401633063" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501567">
+                        <collision-poly>
+                            <point x="0.188462" y="0.153605" />
+                            <point x="0.5" y="0.0532915" />
+                            <point x="0.803846" y="0.159875" />
+                            <point x="0.642308" y="0.498433" />
+                            <point x="0.923077" y="0.937304" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0653846" y="0.946708" />
+                            <point x="0.0307692" y="0.498433" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="TranspBig" pingpong="0" repeatcount="1" repeatto="0" sid="9484530112714744" speed="5">
+                    <frame duration="1" hotspotX="0.501901" hotspotY="0.501558">
+                        <collision-poly>
+                            <point x="0.209125" y="0.17134" />
+                            <point x="0.498099" y="0.0903427" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.498099" y="0.987539" />
+                            <point x="0.0836502" y="0.931464" />
+                            <point x="0.0304183" y="0.498442" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Cuadrito" sid="3117427353629036">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Logical Row" name="Row" sid="379560734974476" type="number" />
+                <instance-variable comment="Logical Column" name="Col" sid="9586019273651577" type="number" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6457463977754152" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Debug" sid="763122672221363">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Touch" sid="8585450349877782">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Mouse" sid="8956603948832384">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Steps_array" sid="2520698626477045">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Board_Array" sid="6220126737732319">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="UndoButton" sid="2278115886488702">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4080236562743156" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.02" y="0.98" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="5497866194548487" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.00416667" y="0.00416667" />
+                            <point x="1" y="0" />
+                            <point x="0.995833" y="0.995833" />
+                            <point x="0.00416667" y="0.995833" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Equis" sid="7179151224198847">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6414822897277322" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.04" y="0.04" />
+                            <point x="0.5" y="0.26" />
+                            <point x="0.98" y="0.02" />
+                            <point x="0.76" y="0.5" />
+                            <point x="0.96" y="0.96" />
+                            <point x="0.5" y="0.72" />
+                            <point x="0.04" y="0.96" />
+                            <point x="0.26" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DefaultG" pingpong="0" repeatcount="1" repeatto="0" sid="7881170932427457" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0416667" y="0.0416667" />
+                            <point x="0.5" y="0.2875" />
+                            <point x="0.958333" y="0.0416667" />
+                            <point x="0.716667" y="0.5" />
+                            <point x="0.958333" y="0.958333" />
+                            <point x="0.5" y="0.708333" />
+                            <point x="0.0458333" y="0.954167" />
+                            <point x="0.2875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Solutions" sid="9684778519204312">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Solu_Array" sid="6077082463401757">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Mov" sid="3413079988284661">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="ERRORTEXT" sid="5609159604403225">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Refranes" sid="496094714899668">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TileText" sid="7392035066031152">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Col" sid="5000582148209545" type="number" />
+                <instance-variable name="Row" sid="1217359562303489" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Salida" sid="9104383042116993">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinnerText" sid="7455857489155386">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ImagenPortada" sid="7202588151822455">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Portada_Fondo" sid="9706129059429977">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Portada_Letras" sid="9199465879037325">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Instrucciones" sid="5227606041937051">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Blanco" sid="860720826132968">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Cartela" sid="6030447401952209">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8910040871042637" speed="5">
+                    <frame duration="1" hotspotX="0.5008" hotspotY="0.502825">
+                        <collision-poly>
+                            <point x="0.0224" y="0.039548" />
+                            <point x="0.9824" y="0.0310734" />
+                            <point x="0.9904" y="0.5" />
+                            <point x="0.9712" y="0.949153" />
+                            <point x="0.4992" y="0.937853" />
+                            <point x="0.0272" y="0.951977" />
+                            <point x="0.0128" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Old" pingpong="0" repeatcount="1" repeatto="0" sid="7522085485045459" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502024">
+                        <collision-poly>
+                            <point x="0.00414937" y="0.00809716" />
+                            <point x="0.997925" y="0.00404858" />
+                            <point x="0.985477" y="0.97166" />
+                            <point x="0.5" y="0.991902" />
+                            <point x="0" y="0.963563" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explanation" sid="3699091370900759">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder expanded="0">
+        <layout>Cuadricula.xml</layout>
+        <layout>Winner.xml</layout>
+        <layout>Demo.xml</layout>
+        <layout>Portada.xml</layout>
+    </layout-folder>
+    <event-folder expanded="1">
+        <event-sheet>MainSheet.xml</event-sheet>
+        <event-sheet>WinnerSheet.xml</event-sheet>
+        <event-sheet>DemoSheet.xml</event-sheet>
+        <event-sheet>PortadaSheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="99">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="100" />
+    </global-instances>
+    <sounds-folder expanded="1" />
+    <music-folder expanded="1" />
+    <files-folder expanded="1" />
+</c2project>

@@ -1,0 +1,1635 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>DemoSheet</name>
+    <events>
+        <variable comment="Pointer to Steps_array" constant="0" name="pointer2" sid="3767885717004975" static="0" type="number">0</variable>
+        <variable comment="Square Width" constant="0" name="StepX2" sid="6145366512765758" static="0" type="number">0</variable>
+        <variable constant="0" name="Tablero2" sid="467472147587243" static="0" type="number">0</variable>
+        <variable comment="Square Height" constant="0" name="StepY2" sid="8671927411912702" static="0" type="number">0</variable>
+        <variable comment="Text of current solution" constant="0" name="SolutionText2" sid="7808299088585213" static="0" type="text">2,3,6,0,3,5,7,2,0,5,3,0,6,4</variable>
+        <variable comment="Line number for current solution at solutions.text" constant="0" name="SolutionLine2" sid="276941905651093" static="0" type="number">0</variable>
+        <variable comment="Count of possible solutions stored inside Solutions" constant="0" name="SolutionCount2" sid="5341242099992008" static="0" type="number">0</variable>
+        <variable comment="Refrán actual" constant="0" name="Refran2" sid="9129880357715473" static="0" type="text">A-ca-ba-llo-re-ga-la-do-no-le-mi-res-el-dien-te</variable>
+        <variable constant="0" name="RefranCount2" sid="6776674416675566" static="0" type="number">0</variable>
+        <variable constant="0" name="RefranLine2" sid="7812592106306538" static="0" type="number">0</variable>
+        <variable comment='Number of Steps included within a &quot;Solution&quot;' constant="0" name="SolutionSteps2" sid="7470033012927743" static="0" type="number">0</variable>
+        <variable comment="Initial Values for MOV array" constant="0" name="MovInitial2" sid="5419759789490409" static="0" type="text">1,-2,2,-1,2,1,1,2,-1,2,-2,1,-2,-1,-1,-2</variable>
+        <variable constant="0" name="MovActual2" sid="7971731778842335" static="0" type="number">0</variable>
+        <variable constant="0" name="LastSolY2" sid="7266901187831326" static="0" type="number">0</variable>
+        <variable constant="0" name="LastSolX2" sid="641829451490513" static="0" type="number">0</variable>
+        <variable comment="Solution X" constant="0" name="SolX2" sid="2959098505766009" static="0" type="number">0</variable>
+        <variable comment="Solution Y" constant="0" name="SolY2" sid="7407215977049016" static="0" type="number">0</variable>
+        <variable constant="0" name="MoverX2" sid="6213724243724913" static="0" type="number">0</variable>
+        <variable constant="0" name="MoverY2" sid="3287513667776328" static="0" type="number">0</variable>
+        <variable comment="Stores text at salida.text in undo loops" constant="0" name="TempSalida2" sid="7203643672516409" static="0" type="text"></variable>
+        <event-group description="This group stores initialization routines." sid="9877664938547561" title="InitialGrpDmo">
+            <sub-events>
+                <event-block sid="589587407311699">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="187994749999616" type="System" />
+                        <condition id="-18" inverted="1" name="Is in preview" sid="568165343754125" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7550092930298445" type="Debug">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9447952866497814">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4382244935019634" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="2255483755222351" type="System" />
+                        <action id="1" name="Set size" sid="9595465635528371" type="Board_Array">
+                            <param id="0" name="Width">4</param>
+                            <param id="1" name="Height">4</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="1" name="Set size" sid="2498802997937303" type="Steps_array">
+                            <param id="0" name="Width">64</param>
+                            <param id="1" name="Height">2</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6417791902323401" type="System">
+                            <param id="0" name="Variable">StepX2</param>
+                            <param id="1" name="Value">min(LayoutHeight/4,LayoutWidth/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6381082912236866" type="System">
+                            <param id="0" name="Variable">StepY2</param>
+                            <param id="1" name="Value">min(LayoutHeight/4,LayoutWidth/4)</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="1319851588117935" type="System">
+                            <param id="0" name="Variable">StepX2</param>
+                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="4606236750968889" type="System">
+                            <param id="0" name="Variable">StepY2</param>
+                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
+                        </action>
+                        <action id="1" name="Append text" sid="3770384115215762" type="Debug">
+                            <param id="0" name="Text">&quot;Step X=&quot; &amp; StepX2 &amp; newline</param>
+                        </action>
+                        <action id="1" name="Append text" sid="5503054466079122" type="Debug">
+                            <param id="0" name="Text">&quot;Step Y=&quot; &amp; StepY2 &amp; newline</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="7962537044613285" type="Steps_array">
+                            <param id="0" name="X">pointer2</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="1945803205260357" type="Steps_array">
+                            <param id="0" name="X">pointer2</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action disabled="1" id="-7" name="Set size" sid="8647795781110898" type="Caballito">
+                            <param id="0" name="Width">StepX2*41/60</param>
+                            <param id="1" name="Height">StepY2*50/60</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="5244291247066836" type="UndoButton">
+                            <param id="0" name="Width">StepX2</param>
+                            <param id="1" name="Height">StepY2</param>
+                        </action>
+                        <action disabled="1" id="1" name="Set blend mode" sid="5632047966243874" type="Caballito">
+                            <param id="0" name="Blend mode">2</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="3740633046254584" type="System">
+                            <param id="0" name="Group name">&quot;SolutionGrpDmo&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7205407219800464">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9746837859551509" type="System">
+                                    <param id="0" name="First value">StepX2</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">120</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8693820392900306" type="Caballito">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2796180208426076" type="Caballito">
+                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="1" name="Height">StepY2*50/60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7130553999022421">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4758302334364583" type="System">
+                                    <param id="0" name="First value">StepX2</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">120</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="9723844710826113" type="Caballito">
+                                    <param id="0" name="Animation">&quot;DefaultBig&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="1786539166554266" type="Caballito">
+                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="1" name="Height">StepY2*50/60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7966872785613117">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3479178873665254" type="System">
+                                    <param id="0" name="First value">WindowWidth</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">WindowHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="579835635682686" type="UndoButton">
+                                    <param id="0" name="X">StepX2*0.5</param>
+                                    <param id="1" name="Y">StepY2*4.5</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="6348333916281631" type="Salida">
+                                    <param id="0" name="Width">StepX2*4.5</param>
+                                    <param id="1" name="Height">StepY2</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="6598186524042737" type="Salida">
+                                    <param id="0" name="X">StepX2*1</param>
+                                    <param id="1" name="Y">StepY2*4</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2407173451085372" type="Salida">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="3603421337148364" type="Salida">
+                                    <param id="0" name="Size (pt)">StepX2/8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9632983596862105">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2688499920483671" type="System">
+                                    <param id="0" name="First value">WindowWidth</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">WindowHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1839806705184826" type="UndoButton">
+                                    <param id="0" name="X">StepX2*4.5</param>
+                                    <param id="1" name="Y">StepY2*0.5</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3326948714657162" type="Salida">
+                                    <param id="0" name="Width">StepX2</param>
+                                    <param id="1" name="Height">StepY2*4.5</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7686516625283564" type="Salida">
+                                    <param id="0" name="X">StepX2*4</param>
+                                    <param id="1" name="Y">StepY2*1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="5473166334648682" type="Salida">
+                                    <param id="0" name="Size (pt)">StepX2/8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="426889745563973">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="3008378945582953" type="System">
+                                    <param id="0" name="Object">Cuadrito</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="4877522400123925" type="Cuadrito">
+                                    <param id="0" name="X">(Cuadrito.Col+0.5)*StepX2</param>
+                                    <param id="1" name="Y">(Cuadrito.Row+0.5)*StepY2</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="7591251081918928" type="Board_Array">
+                                    <param id="0" name="X">Cuadrito.Col</param>
+                                    <param id="1" name="Y">Cuadrito.Row</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2111008731873134" type="Cuadrito">
+                                    <param id="0" name="Width">StepX2</param>
+                                    <param id="1" name="Height">StepY2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="4061872481323793" type="Cuadrito">
+                                    <param id="0" name="Frame number">(1+Cuadrito.Row+Cuadrito.Col) % 2</param>
+                                </action>
+                                <action id="2" name="Stop" sid="9187818762477681" type="Cuadrito" />
+                                <action id="-10" name="Add to" sid="682028684235356" type="System">
+                                    <param id="0" name="Variable">Tablero2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3557387155483223">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="8682588062446231" type="System">
+                                    <param id="0" name="Object">TileText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="41217981664846" type="TileText">
+                                    <param id="0" name="X">(TileText.Col+0.5)*StepX2</param>
+                                    <param id="1" name="Y">(TileText.Row+0.5)*StepY2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="8596721964708721" type="TileText">
+                                    <param id="0" name="Width">StepX2*0.9</param>
+                                    <param id="1" name="Height">StepY2*0.9</param>
+                                </action>
+                                <action disabled="1" id="4" name="Set font color" sid="4780538142799816" type="TileText">
+                                    <param id="0" name="Color">rgb(150, 128, 158)</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="4637305144420485" type="TileText">
+                                    <param id="0" name="Color">((1+TileText.Row+TileText.Col)%2) ? rgb(0, 0, 0) : rgb(255,255,255)</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="3883516361952104" type="TileText">
+                                    <param id="0" name="Size (pt)">StepX2/6</param>
+                                </action>
+                                <action disabled="1" id="1" name="Append text" sid="5520836327094289" type="Debug">
+                                    <param id="0" name="Text">&quot;Arranging Tiletext &quot; &amp; TileText.UID &amp;newline</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="9060301615676106" type="TileText">
+                                    <param id="0" name="Layer">&quot;Letras&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6207576105097943">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="658791957964074" type="System">
+                                    <param id="0" name="Variable">Tablero2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">16</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="4964798070954363" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="626631856256005">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="8491638503068491" type="Cuadrito">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">0</param>
+                                            <param id="2" name="Y">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="9522484491672438" type="Caballito">
+                                            <param id="0" name="Object">Cuadrito</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="7249078303010095">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3446997069811088" type="System">
+                                    <param id="0" name="First value">WindowWidth</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">WindowHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8646081348772962" type="UndoButton">
+                                    <param id="0" name="X">StepX2*4.5</param>
+                                    <param id="1" name="Y">StepY2*0.5</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="1598054654389917" type="Salida">
+                                    <param id="0" name="Width">StepX2</param>
+                                    <param id="1" name="Height">StepY2*4.5</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="3270978687401692" type="Salida">
+                                    <param id="0" name="X">StepX2*4</param>
+                                    <param id="1" name="Y">StepY2*1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2092789194057048" type="System">
+                                    <param id="0" name="Variable">pointer2</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8557054554719422" type="System">
+                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9641116664322913" type="System">
+                                    <param id="0" name="Variable">pointer2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9213596575635742">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6041352151120048" type="System">
+                                    <param id="0" name="First value">WindowWidth</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">WindowHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="2848954403861882" type="UndoButton">
+                                    <param id="0" name="X">StepX2*0.5</param>
+                                    <param id="1" name="Y">StepY2*4.5</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="8071691653932108" type="Salida">
+                                    <param id="0" name="Width">StepX2*4.5</param>
+                                    <param id="1" name="Height">StepY2</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="480035028131211" type="Salida">
+                                    <param id="0" name="X">StepX2*1</param>
+                                    <param id="1" name="Y">StepY2*4</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6843139251481197" type="System">
+                                    <param id="0" name="Variable">pointer2</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="1031297588123455" type="System">
+                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8197001016281574" type="System">
+                                    <param id="0" name="Variable">pointer2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Manages Solutions" inactive="1" sid="7245251627494988" title="SolutionGrpDmo">
+            <sub-events>
+                <event-block sid="9795762650226228">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9653655853382864" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="9416139438779811" type="Debug">
+                            <param id="0" name="Text">&quot;SolutionGrpDmo Activated&quot;</param>
+                        </action>
+                        <action id="1" name="Set size" sid="7617397633392437" type="Solu_Array">
+                            <param id="0" name="Width">64</param>
+                            <param id="1" name="Height">2</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6308054781244988">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="5696530768699729" type="Mov">
+                                    <param id="0" name="X">7</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">-2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="7161690039849999" type="System">
+                                    <param id="0" name="Group name">&quot;MovGrpDmo&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="1" name="Append text" sid="6235486955175228" type="Debug">
+                                    <param id="0" name="Text">&quot;Activating MovGrpDmo&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5460998689722399">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="3337493474531592" type="Mov">
+                                    <param id="0" name="X">7</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">-2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="7627994890511459" type="System">
+                                    <param id="0" name="Group name">&quot;SolutionGrp2Dmo&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="5538965502278684" type="System">
+                                    <param id="0" name="Group name">&quot;MovGrpDmo&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" inactive="1" sid="77662464890982" title="SolutionGrp2Dmo">
+                    <sub-events>
+                        <event-block sid="6183931972272563">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="4666681674724332" type="Mov">
+                                    <param id="0" name="X">7</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">-2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2873009528326165" type="System">
+                                    <param id="0" name="Variable">SolX2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3868958772484803" type="System">
+                                    <param id="0" name="Variable">SolY2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Append text" sid="1453401830718875" type="Debug">
+                                    <param id="0" name="Text">&quot;SolutionGroup Stage 2&quot; &amp; newline</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1469650923449652" type="System">
+                                    <param id="0" name="Variable">LastSolX2</param>
+                                    <param id="1" name="Value">SolX2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4494640850470213" type="System">
+                                    <param id="0" name="Variable">LastSolY2</param>
+                                    <param id="1" name="Value">SolY2</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="222011448896916" type="Solu_Array">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Value">SolX2</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="5114030893324751" type="Solu_Array">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">SolY2</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9370513682524234">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="6259413210910615" type="System">
+                                            <param id="0" name="Name">&quot;SolutionIndex&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">tokencount(SolutionText2,&quot;,&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="294413375046503" type="System">
+                                            <param id="0" name="Variable">MovActual2</param>
+                                            <param id="1" name="Value">int(tokenAt(SolutionText2,loopIndex(&quot;SolutionIndex&quot;),&quot;,&quot;))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3657735038966077" type="System">
+                                            <param id="0" name="Variable">LastSolX2</param>
+                                            <param id="1" name="Value">SolX2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5282498668323901" type="System">
+                                            <param id="0" name="Variable">LastSolY2</param>
+                                            <param id="1" name="Value">SolY2</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="7381891823969082" type="System">
+                                            <param id="0" name="Variable">SolX2</param>
+                                            <param id="1" name="Value">Mov.At(MovActual2,0)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="8808969795981944" type="System">
+                                            <param id="0" name="Variable">SolY2</param>
+                                            <param id="1" name="Value">Mov.At(MovActual2,1)</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="3736253935675889" type="Solu_Array">
+                                            <param id="0" name="X">loopIndex(&quot;SolutionIndex&quot;)</param>
+                                            <param id="1" name="Y">0</param>
+                                            <param id="2" name="Value">SolX2</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="2215405825574928" type="Solu_Array">
+                                            <param id="0" name="X">loopIndex(&quot;SolutionIndex&quot;)</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">SolY2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9770977595683904">
+                                            <conditions>
+                                                <condition id="-15" name="Pick nearest/furthest" sid="9162456334599636" type="TileText">
+                                                    <param id="0" name="Which">0</param>
+                                                    <param id="1" name="X">(LastSolX2+0.5)*StepX2</param>
+                                                    <param id="2" name="Y">(LastSolY2+0.5)*StepY2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="3666156637921675" type="TileText">
+                                                    <param id="0" name="Text">tokenat(Refran2,loopindex(&quot;SolutionIndex&quot;),&quot;-&quot;)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="7266699708832568">
+                                                    <conditions>
+                                                        <condition id="0" name="Compare text" sid="57913022262632" type="TileText">
+                                                            <param id="0" name="Text to compare">&quot;&quot;</param>
+                                                            <param id="1" name="Case sensitivity">0</param>
+                                                        </condition>
+                                                        <condition id="-15" name="Pick nearest/furthest" sid="1298925293383639" type="Cuadrito">
+                                                            <param id="0" name="Which">0</param>
+                                                            <param id="1" name="X">(LastSolX2+0.5)*StepX2</param>
+                                                            <param id="2" name="Y">(LastSolY2+0.5)*StepY2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="7056174652846916" type="Cuadrito">
+                                                            <param id="0" name="Object">Equis</param>
+                                                            <param id="1" name="Layer">&quot;Letras&quot;</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="6261308617042911" type="Equis">
+                                                            <param id="0" name="Animation">StepX2&lt;=120 ? &quot;Default&quot;:&quot;DefaultG&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="6395980099955735" type="Equis">
+                                                            <param id="0" name="Width">StepX2</param>
+                                                            <param id="1" name="Height">StepY2</param>
+                                                        </action>
+                                                        <action id="-3" name="Set position" sid="5476304830897028" type="Equis">
+                                                            <param id="0" name="X">(LastSolX2+0.5)*StepX2</param>
+                                                            <param id="1" name="Y">(LastSolY2+0.5)*StepY2</param>
+                                                        </action>
+                                                        <action id="-24" name="Move to top" sid="6437686309349905" type="Equis" />
+                                                        <action id="3" name="Set at XY" sid="3320332422592825" type="Board_Array">
+                                                            <param id="0" name="X">LastSolX2</param>
+                                                            <param id="1" name="Y">LastSolY2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="9286377920358097">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3812479252380157" type="System">
+                                                    <param id="0" name="First value">loopindex(&quot;SolutionIndex&quot;)</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">tokencount(&quot;SolutionText&quot;,&quot;,&quot;)-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Set group active" sid="4611450374179269" type="System">
+                                                    <param id="0" name="Group name">&quot;SolutionGrp3Dmo&quot;</param>
+                                                    <param id="1" name="State">1</param>
+                                                </action>
+                                                <action id="-12" name="Set group active" sid="2723119157418567" type="System">
+                                                    <param id="0" name="Group name">&quot;SolutionGrpDmo&quot;</param>
+                                                    <param id="1" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5114037390276092">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="4904172684952956" type="Salida">
+                                                    <param id="0" name="Text to compare">&quot;&quot;</param>
+                                                    <param id="1" name="Case sensitivity">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="6323043405520544" type="Salida">
+                                                    <param id="0" name="Text">tokenat(Refran2,0,&quot;-&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" inactive="1" sid="990417770053536" title="SolutionGrp3Dmo">
+                    <sub-events>
+                        <event-block sid="1257437866424567">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Append text" sid="1236472947934713" type="Debug">
+                                    <param id="0" name="Text">&quot;SolutionGroup Stage 3&quot; &amp;newline</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4231634888221235">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="4671084083448251" type="System">
+                                            <param id="0" name="Object">TileText</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="363075409262231">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="3732971064764657" type="TileText">
+                                                    <param id="0" name="Text to compare">&quot;Borrame&quot;</param>
+                                                    <param id="1" name="Case sensitivity">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="8602764062871909" type="TileText">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="963159950534819">
+                                            <conditions>
+                                                <condition id="0" name="Compare text" sid="9739013512311749" type="TileText">
+                                                    <param id="0" name="Text to compare">&quot;&quot;</param>
+                                                    <param id="1" name="Case sensitivity">0</param>
+                                                </condition>
+                                                <condition id="-15" name="Pick nearest/furthest" sid="920528117919486" type="Cuadrito">
+                                                    <param id="0" name="Which">0</param>
+                                                    <param id="1" name="X">TileText.Col</param>
+                                                    <param id="2" name="Y">TileText.Row</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="8459443514061058" type="Cuadrito">
+                                                    <param id="0" name="Object">Equis</param>
+                                                    <param id="1" name="Layer">&quot;Letras&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="6674234027353593" type="Equis">
+                                                    <param id="0" name="Width">StepX2</param>
+                                                    <param id="1" name="Height">StepY2</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="1130034849654144" type="Equis">
+                                                    <param id="0" name="X">(TileText.Col+0.5)*StepX2</param>
+                                                    <param id="1" name="Y">(TileText.Row+0.5)*StepX2</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="229542046565201" type="Equis" />
+                                                <action id="3" name="Set at XY" sid="8373026900901901" type="Board_Array">
+                                                    <param id="0" name="X">TileText.Col</param>
+                                                    <param id="1" name="Y">TileText.Row</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Esto de momento funciona pero puede ser fuente de futuros problemas...</comment>
+                                <event-block sid="952145236133548">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-12" name="Set group active" sid="3683333760982341" type="System">
+                                            <param id="0" name="Group name">&quot;SolutionGrp3Dmo&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Initialize Mov array, needed for Solutions" inactive="1" sid="5237020189056627" title="MovGrpDmo">
+            <sub-events>
+                <comment>Initialize Mov</comment>
+                <event-block sid="5413409284997885">
+                    <conditions>
+                        <condition id="-15" name="Is group active" sid="560709322934901" type="System">
+                            <param id="0" name="Group name">&quot;MovGrpDmo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set size" sid="6826693496629747" type="Mov">
+                            <param id="0" name="Width">8</param>
+                            <param id="1" name="Height">2</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="1" name="Append text" sid="5444625573682149" type="Debug">
+                            <param id="0" name="Text">&quot;MovGroup Active&quot; &amp; newline</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5070487552851196">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4258413961966248" type="System">
+                                    <param id="0" name="Name">&quot;movindex&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="6937186191274632" type="Mov">
+                                    <param id="0" name="X">loopIndex(&quot;movindex&quot;)</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Value">int(tokenat(MovInitial2,loopIndex(&quot;movindex&quot;)*2,&quot;,&quot;))</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="2923805512899749" type="Mov">
+                                    <param id="0" name="X">loopIndex(&quot;movindex&quot;)</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">int(tokenat(MovInitial2,1+loopIndex(&quot;movindex&quot;)*2,&quot;,&quot;))</param>
+                                </action>
+                                <action id="1" name="Append text" sid="2968718876411331" type="Debug">
+                                    <param id="0" name="Text">&quot;Mov (&quot; &amp; loopindex(&quot;movindex&quot;) &amp; &quot;)=&quot; &amp; Mov.at(loopindex(&quot;movindex&quot;),0) &amp; &quot;,&quot; &amp; Mov.At(loopindex(&quot;movindex&quot;),1) &amp; newline</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="516520698996096">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="6634954749641639" type="System">
+                                            <param id="0" name="First value">loopindex(&quot;movindex&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="7556512484917432">
+                                            <conditions>
+                                                <condition id="1" name="Compare at XY" sid="2340379156102338" type="Mov">
+                                                    <param id="0" name="X">7</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Comparison">1</param>
+                                                    <param id="3" name="Value">-2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action disabled="1" id="-25" name="Go to layout (by name)" sid="2891408761057793" type="System">
+                                                    <param id="0" name="Layout">&quot;ERROR&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7943409978359214">
+                                            <conditions>
+                                                <condition id="1" name="Compare at XY" sid="8305703290762189" type="Mov">
+                                                    <param id="0" name="X">7</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Comparison">0</param>
+                                                    <param id="3" name="Value">-2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Set group active" sid="1505886718663834" type="System">
+                                                    <param id="0" name="Group name">&quot;SolutionGrp2Dmo&quot;</param>
+                                                    <param id="1" name="State">1</param>
+                                                </action>
+                                                <action id="-12" name="Set group active" sid="6119529052929602" type="System">
+                                                    <param id="0" name="Group name">&quot;MovGrpDmo&quot;</param>
+                                                    <param id="1" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description='Text Scroll for debug control &quot;Text&quot;' sid="5958771962971528" title="TextScroll">
+            <sub-events>
+                <event-block sid="6497542697572938">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7119522822946246" type="System">
+                            <param id="0" name="First value">tokencount(Debug.Text,newline)</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">10</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="3152647408221081" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="2439232306936207" type="Debug">
+                            <param id="0" name="Text">mid(Debug.Text,find(Debug.Text,newline)+1,len(Debug.Text)-find(Debug.Text,newline)+1)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5085546289197663">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2059273581169316" title="MainLoop">
+            <sub-events>
+                <comment>Every 2 seconds, horse moves.</comment>
+                <event-block sid="1680857068951831">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="9017188482101255" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2434770649040031" type="System">
+                            <param id="0" name="Variable">MovActual2</param>
+                            <param id="1" name="Value">int(tokenAt(SolutionText2,pointer2,&quot;,&quot;))</param>
+                        </action>
+                        <action id="1" name="Append text" sid="2263165270910171" type="Debug">
+                            <param id="0" name="Text">&quot;Solution(&quot;&amp;pointer2&amp;&quot;)=&quot;&amp;MovActual2 &amp;&quot;; &quot; </param>
+                        </action>
+                        <action id="1" name="Append text" sid="8866931449566467" type="Debug">
+                            <param id="0" name="Text">&quot;Mov(&quot;&amp;MovActual2&amp;&quot;)=(&quot;&amp;Mov.At(pointer2,0)&amp;&quot;,&quot;&amp;Mov.At(pointer2,1)&amp;&quot;)&quot;&amp;newline</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9173149007093842" type="System">
+                            <param id="0" name="Variable">MoverX2</param>
+                            <param id="1" name="Value">Caballito.X+Mov.At(MovActual2,0)*StepX2+0.5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5420698645112453" type="System">
+                            <param id="0" name="Variable">MoverY2</param>
+                            <param id="1" name="Value">Caballito.Y+Mov.At(MovActual2,1)*StepY2+0.5</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="1109754347006635" type="System">
+                            <param id="0" name="Variable">MoverX2</param>
+                            <param id="1" name="Value">(Solu_Array.At(pointer2,0)+Mov.At(MovActual2,0))*StepX2+0.5</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="7074207939629292" type="System">
+                            <param id="0" name="Variable">MoverY2</param>
+                            <param id="1" name="Value">(Solu_Array.At(pointer2,0)+Mov.At(MovActual2,1))*StepY2+0.5</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="5218494610780988" type="System">
+                            <param id="0" name="Variable">MoverX2</param>
+                            <param id="1" name="Value">Solu_Array.At(pointer2+1,0)*StepX2+0.5</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="2037089085677384" type="System">
+                            <param id="0" name="Variable">MoverY2</param>
+                            <param id="1" name="Value">Solu_Array.At(pointer2+1,1)*StepY2+0.5</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="618043439345372" type="System">
+                            <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="5587041284048146" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9983026808950583">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="577705520209741" type="System">
+                                    <param id="0" name="First value">pointer2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="8593132299779271" type="System">
+                                    <param id="0" name="Group name">&quot;FadeOut&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="7742655743462029" type="System">
+                                    <param id="0" name="Group name">&quot;MainLoop&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Is the horse moving? Where is the horse?</comment>
+                <comment>MoverX2&lt;&gt;Caballito.X OR MoverY2&lt;&gt;Caballito.Y</comment>
+                <event-block collapsed="1" sid="2163154771207805">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1115476043883794" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="2922070239802093" type="System">
+                            <param id="0" name="First value">(MoverX2 &lt;&gt; Caballito.X) ? 1 : (MoverY2&lt;&gt;Caballito.Y) ? 1 : 0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="1234642443013166" type="Caballito">
+                            <param id="0" name="Angle">angle(Caballito.X,Caballito.Y,MoverX2,MoverY2)</param>
+                            <param id="1" name="Distance">StepX2/25</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5997461058988829">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="246234786319172" type="Caballito">
+                                    <param id="0" name="Object">Cuadrito</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="4655792949992273" type="Caballito">
+                                    <param id="0" name="Instance variable">dragging</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5853846824572959">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8695856299565363" type="System">
+                                            <param id="0" name="First value">StepX2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">120</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="6046610271495129" type="Caballito">
+                                            <param id="0" name="Animation">&quot;Transp&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="2916563186743938" type="Caballito">
+                                            <param id="0" name="Width">StepX2*41/60</param>
+                                            <param id="1" name="Height">StepY2*50/60</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2837028062622646">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7055122948425644" type="System">
+                                            <param id="0" name="First value">StepX2</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">120</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="7705128182550469" type="Caballito">
+                                            <param id="0" name="Animation">&quot;TranspBig&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="6358725792879206" type="Caballito">
+                                            <param id="0" name="Width">StepX2*41/60</param>
+                                            <param id="1" name="Height">StepY2*50/60</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5471037596640416">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7593595179086404" type="System">
+                                            <param id="0" name="First value">abs(Cuadrito.Col-Steps_array.At(pointer2,0))</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8604769293295774">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="297784779437704" type="System">
+                                                    <param id="0" name="First value">abs(Cuadrito.Row-Steps_array.At(pointer2,1))</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="431449944529151" type="System">
+                                                    <param id="0" name="First value">Board_Array.At(Cuadrito.Col,Cuadrito.Row)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="3454904673968908" type="Caballito">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="8034997618932081" type="Cuadrito">
+                                                    <param id="0" name="Object">Equis</param>
+                                                    <param id="1" name="Layer">&quot;Letras&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="8937268168121424" type="Equis">
+                                                    <param id="0" name="Animation">StepX2&lt;=120 ? &quot;Default&quot;:&quot;DefaultG&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="2466055499449572" type="Equis">
+                                                    <param id="0" name="Width">StepX2</param>
+                                                    <param id="1" name="Height">StepY2</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="7570403728961169" type="Equis" />
+                                                <action id="-3" name="Set position" sid="2325103051043652" type="Equis">
+                                                    <param id="0" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                    <param id="1" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="3093229158517953" type="System">
+                                                    <param id="0" name="Variable">pointer2</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="7812188421600244" type="Steps_array">
+                                                    <param id="0" name="X">pointer2</param>
+                                                    <param id="1" name="Y">0</param>
+                                                    <param id="2" name="Value">Cuadrito.Col</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="9958334784551976" type="Steps_array">
+                                                    <param id="0" name="X">pointer2</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Value">Cuadrito.Row</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="2002871402935775" type="Debug">
+                                                    <param id="0" name="Text">newline &amp; &quot;`[&quot;&amp; pointer2 &amp;&quot;]=&gt;(&quot; &amp; Cuadrito.Col &amp; &quot;,&quot; &amp; Cuadrito.Row &amp; &quot;)&quot;</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="7691459668341563" type="Board_Array">
+                                                    <param id="0" name="X">Cuadrito.Col</param>
+                                                    <param id="1" name="Y">Cuadrito.Row</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="7373176682258928" type="Caballito">
+                                                    <param id="0" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                    <param id="1" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="5566508939500713" type="Debug">
+                                                    <param id="0" name="Text">newline &amp; &quot;`[&quot;&amp; pointer &amp;&quot;]=&gt;(&quot; &amp; Cuadrito.Col &amp; &quot;,&quot; &amp; Cuadrito.Row &amp; &quot;)&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="8106211102946154" type="Caballito">
+                                                    <param id="0" name="Instance variable">moving</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="6372177899283159">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="123375008574707" type="System">
+                                                            <param id="0" name="First value">StepX2</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Second value">120</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="7981038962978173" type="Caballito">
+                                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="2607915930282807" type="Caballito">
+                                                            <param id="0" name="Width">StepX2*41/60</param>
+                                                            <param id="1" name="Height">StepY2*50/60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="6599440661705133">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="8655278574016039" type="System">
+                                                            <param id="0" name="First value">StepX2</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Second value">120</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="1920407863433655" type="Caballito">
+                                                            <param id="0" name="Animation">&quot;DefaultBig&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="9188163833338852" type="Caballito">
+                                                            <param id="0" name="Width">StepX2*41/60</param>
+                                                            <param id="1" name="Height">StepY2*50/60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="981281976334269">
+                                                    <conditions>
+                                                        <condition id="0" inverted="1" name="Compare text" sid="9473327594690089" type="Salida">
+                                                            <param id="0" name="Text to compare">&quot;&quot;</param>
+                                                            <param id="1" name="Case sensitivity">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="9275230102385558" type="Salida">
+                                                            <param id="0" name="Text">&quot;-&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="1340731835874033">
+                                                    <conditions>
+                                                        <condition id="-15" name="Pick nearest/furthest" sid="1157897861553386" type="TileText">
+                                                            <param id="0" name="Which">0</param>
+                                                            <param id="1" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                            <param id="2" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="7019891320710224" type="Salida">
+                                                            <param id="0" name="Text">TileText.Text</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7466404782565969">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1970641583995156" type="System">
+                                            <param id="0" name="First value">abs(Cuadrito.Row-Steps_array.At(pointer2,1))</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6905120595717224">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8464481284317739" type="System">
+                                                    <param id="0" name="First value">abs(Cuadrito.Col-Steps_array.At(pointer2,0))</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="4262096285006644" type="System">
+                                                    <param id="0" name="First value">Board_Array.At(Cuadrito.Col,Cuadrito.Row)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="2551563603058061" type="Caballito">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="4641650670745019" type="Cuadrito">
+                                                    <param id="0" name="Object">Equis</param>
+                                                    <param id="1" name="Layer">&quot;Letras&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="9287730175633176" type="Equis">
+                                                    <param id="0" name="Width">StepX2</param>
+                                                    <param id="1" name="Height">StepY2</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="1720907688403649" type="Equis">
+                                                    <param id="0" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                    <param id="1" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="9381748467748395" type="Equis" />
+                                                <action id="-10" name="Add to" sid="9816912522740698" type="System">
+                                                    <param id="0" name="Variable">pointer2</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="3976814739927135" type="Steps_array">
+                                                    <param id="0" name="X">pointer2</param>
+                                                    <param id="1" name="Y">0</param>
+                                                    <param id="2" name="Value">Cuadrito.Col</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="3184951963671989" type="Steps_array">
+                                                    <param id="0" name="X">pointer2</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Value">Cuadrito.Row</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="7400567659321597" type="Debug">
+                                                    <param id="0" name="Text">newline &amp; &quot;`[&quot;&amp; pointer2 &amp;&quot;]=&gt;(&quot; &amp; Cuadrito.Col &amp; &quot;,&quot; &amp; Cuadrito.Row &amp; &quot;)&quot;</param>
+                                                </action>
+                                                <action id="3" name="Set at XY" sid="4835630650126532" type="Board_Array">
+                                                    <param id="0" name="X">Cuadrito.Col</param>
+                                                    <param id="1" name="Y">Cuadrito.Row</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="5691407870518749" type="Caballito">
+                                                    <param id="0" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                    <param id="1" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="6537307592856182" type="Debug">
+                                                    <param id="0" name="Text">newline &amp; &quot;`[&quot;&amp; pointer &amp;&quot;]=&gt;(&quot; &amp; Cuadrito.Col &amp; &quot;,&quot; &amp; Cuadrito.Row &amp; &quot;)&quot;</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="4544220966669321" type="Caballito">
+                                                    <param id="0" name="Instance variable">moving</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="7594522835887878">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="7026250530381778" type="System">
+                                                            <param id="0" name="First value">StepX2</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Second value">120</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="2243171198020983" type="Caballito">
+                                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="6343598721200457" type="Caballito">
+                                                            <param id="0" name="Width">StepX2*41/60</param>
+                                                            <param id="1" name="Height">StepY2*50/60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="9105281630684232">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="627703223873329" type="System">
+                                                            <param id="0" name="First value">StepX2</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Second value">120</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="4576795371782984" type="Caballito">
+                                                            <param id="0" name="Animation">&quot;DefaultBig&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="8971416674760129" type="Caballito">
+                                                            <param id="0" name="Width">StepX2*41/60</param>
+                                                            <param id="1" name="Height">StepY2*50/60</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="2060165299523255">
+                                                    <conditions>
+                                                        <condition id="0" inverted="1" name="Compare text" sid="9650782166162313" type="Salida">
+                                                            <param id="0" name="Text to compare">&quot;&quot;</param>
+                                                            <param id="1" name="Case sensitivity">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="6848863122251262" type="Salida">
+                                                            <param id="0" name="Text">&quot;-&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="1827434047296004">
+                                                    <conditions>
+                                                        <condition id="-15" name="Pick nearest/furthest" sid="9409739697674566" type="TileText">
+                                                            <param id="0" name="Which">0</param>
+                                                            <param id="1" name="X">(Steps_array.At(pointer2,0)+0.5)*StepX2</param>
+                                                            <param id="2" name="Y">(Steps_array.At(pointer2,1)+0.5)*StepY2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Append text" sid="4770812526572667" type="Salida">
+                                                            <param id="0" name="Text">TileText.Text</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>This event breaks all. Disable it.</comment>
+                        <event-block disabled="1" sid="5207129638468864">
+                            <conditions>
+                                <condition disabled="1" id="-8" name="Compare two values" sid="8559043932539732" type="System">
+                                    <param id="0" name="First value">abs(distance(Caballito.X,Caballito.Y,MoverX2,MoverY2))</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">StepX2/4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-13" name="Set boolean" sid="4781705241666803" type="Caballito">
+                                    <param id="0" name="Instance variable">moving</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action disabled="1" id="-13" name="Set boolean" sid="6226848867388999" type="Caballito">
+                                    <param id="0" name="Instance variable">dragging</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action disabled="1" id="1" name="Append text" sid="3485942504074568" type="Debug">
+                                    <param id="0" name="Text">&quot;(clic)&quot;&amp;newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="8610469361476806">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3077417651031901" type="Caballito">
+                            <param id="0" name="Instance variable">dragging</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7038236038610305" type="Caballito">
+                            <param id="0" name="Instance variable">moving</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="4" name="Set animation" sid="4441375293092219" type="Caballito">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9533115838388244">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1355098510169206" type="System">
+                                    <param id="0" name="First value">StepX2</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">240</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2616675123885085" type="Caballito">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="7517957018037142" type="Caballito">
+                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="1" name="Height">StepY2*50/60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4427990318351434">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6347244274323253" type="System">
+                                    <param id="0" name="First value">StepX2</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">240</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="243436515560655" type="Caballito">
+                                    <param id="0" name="Animation">&quot;DefaultBig&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="3272571182065537" type="Caballito">
+                                    <param id="0" name="Width">StepX2*41/60</param>
+                                    <param id="1" name="Height">StepY2*50/60</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8416918316565088">
+                    <conditions>
+                        <condition id="1" name="On any click" sid="3925157006101365" type="Mouse" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="3788583656029143" type="System">
+                            <param id="0" name="Group name">&quot;Fadeout&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3420101420908181">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1559565973055" type="Touch">
+                            <param id="0" name="Object">Cuadrito</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="8361683974627383" type="System">
+                            <param id="0" name="Group name">&quot;Fadeout&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1892115928305654">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4175628627026847" type="Touch">
+                            <param id="0" name="Object">Instrucciones</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="747923278083122" type="System">
+                            <param id="0" name="Group name">&quot;Fadeout&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Change Cartela location if it overlaps Caballito</comment>
+                <event-block sid="7547415490037871">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1021461200589272" type="Cartela">
+                            <param id="0" name="Object">Caballito</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="9682787212206468" type="System">
+                            <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Muestra el texto de Instrucciones correspondiente al valor de Puntero" sid="4199124761888084" title="Mostrar_Instrucciones">
+            <sub-events>
+                <event-block sid="7512329522702635">
+                    <conditions>
+                        <condition id="-13" name="Pick nth instance" sid="5047523029915309" type="System">
+                            <param id="0" name="Object">Instrucciones</param>
+                            <param id="1" name="Instance">pointer2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="6684168186825961" type="Instrucciones">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2647203491208442">
+                    <conditions>
+                        <condition id="-13" name="Pick nth instance" sid="3086170802201031" type="System">
+                            <param id="0" name="Object">Instrucciones</param>
+                            <param id="1" name="Instance">pointer2+1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="8350640051224439" type="Instrucciones">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4251877893661067">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="7207436034384519" type="Caballito">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">StepY2*2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-3" name="Set position" sid="3948665653939705" type="Instrucciones">
+                                    <param id="0" name="X">StepX2*0.1</param>
+                                    <param id="1" name="Y">StepY2*0.1</param>
+                                </action>
+                                <action disabled="1" id="-7" name="Set size" sid="2279715573565502" type="Instrucciones">
+                                    <param id="0" name="Width">StepX2*3.80</param>
+                                    <param id="1" name="Height">StepY2*1.80</param>
+                                </action>
+                                <action disabled="1" id="3" name="Set font size" sid="2961646073023263" type="Instrucciones">
+                                    <param id="0" name="Size (pt)">StepX2/6</param>
+                                </action>
+                                <action disabled="1" id="-7" name="Set size" sid="2466803276361336" type="Blanco">
+                                    <param id="0" name="Width">Instrucciones.Width</param>
+                                    <param id="1" name="Height">Instrucciones.Height</param>
+                                </action>
+                                <action disabled="1" id="-3" name="Set position" sid="6489099046247701" type="Blanco">
+                                    <param id="0" name="X">Instrucciones.X</param>
+                                    <param id="1" name="Y">Instrucciones.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="6921254933358209" type="Cartela">
+                                    <param id="0" name="X">StepX2*2</param>
+                                    <param id="1" name="Y">StepY2/2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="7664284626611105" type="Cartela">
+                                    <param id="0" name="Width">StepX2*4</param>
+                                    <param id="1" name="Height">StepY2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="436061263451369" type="Instrucciones">
+                                    <param id="0" name="Width">StepX2*3.50</param>
+                                    <param id="1" name="Height">StepY2*0.66</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="1229064529901274" type="Instrucciones">
+                                    <param id="0" name="Object">Cartela</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="6538452507071979" type="Instrucciones">
+                                    <param id="0" name="Size (pt)">StepY2/6</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="8625711570972983" type="Cartela" />
+                                <action id="-24" name="Move to top" sid="5824471303148606" type="Instrucciones" />
+                                <action id="-12" name="Set group active" sid="4276644830460262" type="System">
+                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3827030179937586">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="731410883783085" type="Caballito">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">StepY2*2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-3" name="Set position" sid="1562554393411799" type="Instrucciones">
+                                    <param id="0" name="X">StepX2*0.10</param>
+                                    <param id="1" name="Y">StepY2*2.1</param>
+                                </action>
+                                <action disabled="1" id="-7" name="Set size" sid="2501159223572862" type="Instrucciones">
+                                    <param id="0" name="Width">StepX2*3.80</param>
+                                    <param id="1" name="Height">StepY2*1.80</param>
+                                </action>
+                                <action disabled="1" id="-7" name="Set size" sid="3470598003394047" type="Blanco">
+                                    <param id="0" name="Width">Instrucciones.Width</param>
+                                    <param id="1" name="Height">Instrucciones.Height</param>
+                                </action>
+                                <action disabled="1" id="-3" name="Set position" sid="2111500064818026" type="Blanco">
+                                    <param id="0" name="X">Instrucciones.X</param>
+                                    <param id="1" name="Y">Instrucciones.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="1439914538077195" type="Cartela">
+                                    <param id="0" name="X">StepX2*2</param>
+                                    <param id="1" name="Y">StepY2*3.5</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="6656580623879048" type="Cartela">
+                                    <param id="0" name="Width">StepX2*4</param>
+                                    <param id="1" name="Height">StepY2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="4093507274942337" type="Instrucciones">
+                                    <param id="0" name="Width">StepX2*3.50</param>
+                                    <param id="1" name="Height">StepY2*0.66</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="8637992315183085" type="Instrucciones">
+                                    <param id="0" name="Object">Cartela</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="1662986290430414" type="Instrucciones">
+                                    <param id="0" name="Size (pt)">StepY2/6</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="5137828762247606" type="Cartela" />
+                                <action id="-24" name="Move to top" sid="7132267728303184" type="Instrucciones" />
+                                <action id="-12" name="Set group active" sid="2909569985601801" type="System">
+                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7746626239872908">
+                            <conditions>
+                                <condition id="0" name="Compare text" sid="3755810896403503" type="Instrucciones">
+                                    <param id="0" name="Text to compare">&quot;&quot;</param>
+                                    <param id="1" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="6426014694662309" type="Cartela">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="8397775905666483" type="TileText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8286429020143362">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="6119822435873474" type="System">
+                                    <param id="0" name="Object">TileText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="7880093947075181" type="TileText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8287505499468215">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="9450983463173918" type="Cartela">
+                                    <param id="0" name="Object">TileText</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="4319745169012452" type="Cartela" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="6077305893005487" type="TileText">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable constant="0" name="Fading" sid="7743959854079421" static="0" type="number">50</variable>
+        <event-group description="Layers disappear and Cuadricula is executed." inactive="1" sid="7175119515581784" title="Fadeout">
+            <sub-events>
+                <event-block sid="2849910186701158">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3957890110748044" type="System" />
+                        <condition id="-14" name="Compare variable" sid="988170857680743" type="System">
+                            <param id="0" name="Variable">Fading</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Set layer angle" sid="176067351037367" type="System">
+                            <param id="0" name="Layer">&quot;Instrucciones&quot;</param>
+                            <param id="1" name="Angle">LayerAngle(&quot;Instrucciones&quot;)+30</param>
+                        </action>
+                        <action id="-23" name="Set layer angle" sid="6931059316349497" type="System">
+                            <param id="0" name="Layer">&quot;Caballo&quot;</param>
+                            <param id="1" name="Angle">LayerAngle(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-23" name="Set layer angle" sid="3973058911044137" type="System">
+                            <param id="0" name="Layer">&quot;Letras&quot;</param>
+                            <param id="1" name="Angle">LayerAngle(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-23" name="Set layer angle" sid="4383797199654384" type="System">
+                            <param id="0" name="Layer">&quot;Cuadros&quot;</param>
+                            <param id="1" name="Angle">LayerAngle(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="7170182259944027" type="System">
+                            <param id="0" name="Layer">&quot;Instrucciones&quot;</param>
+                            <param id="1" name="Scale">LayerScale(&quot;Instrucciones&quot;)*0.80</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6419628335922993" type="System">
+                            <param id="0" name="Layer">&quot;Caballo&quot;</param>
+                            <param id="1" name="Scale">layerScale(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="1992577926137395" type="System">
+                            <param id="0" name="Layer">&quot;Letras&quot;</param>
+                            <param id="1" name="Scale">layerScale(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="7551630675483117" type="System">
+                            <param id="0" name="Layer">&quot;Cuadros&quot;</param>
+                            <param id="1" name="Scale">layerScale(&quot;Instrucciones&quot;)</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8545916514199768" type="System">
+                            <param id="0" name="Variable">Fading</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5480764882594872">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="6945070187808054" type="Cartela">
+                            <param id="0" name="Object">Caballito</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="8977025778270689" type="Cartela">
+                            <param id="0" name="X">StepX2*2</param>
+                            <param id="1" name="Y">Caballito.Y &lt;StepY2*2? StepY2*0.5 : StepY2*3.5 </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4208883216984111">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2192477917243834" type="System">
+                            <param id="0" name="Variable">Fading</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="3408420585987339" type="System">
+                            <param id="0" name="Layout">Cuadricula</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

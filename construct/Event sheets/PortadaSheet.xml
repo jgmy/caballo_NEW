@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PortadaSheet</name>
+    <events>
+        <variable constant="0" name="StepXPortada" sid="7980943928021102" static="0" type="number">0</variable>
+        <variable constant="0" name="XPortada" sid="9259136471052573" static="0" type="number">0</variable>
+        <variable constant="0" name="YPortada" sid="2816561322190866" static="0" type="number">0</variable>
+        <variable constant="0" name="StepYPortada" sid="3793678240779652" static="0" type="number">0</variable>
+        <variable constant="0" name="StupidCounter" sid="9695939953072411" static="0" type="number">0</variable>
+        <variable comment="Random number" constant="0" name="rand" sid="7887008490425373" static="0" type="number">0</variable>
+        <event-block sid="9558160895359888">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8293941801514423" type="System" />
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="8854368060203966" type="ImagenPortada">
+                    <param id="0" name="Width">WindowWidth</param>
+                    <param id="1" name="Height">WindowHeight</param>
+                </action>
+                <action id="-7" name="Set size" sid="1436467122703178" type="Portada_Fondo">
+                    <param id="0" name="Width">WindowWidth</param>
+                    <param id="1" name="Height">WindowHeight</param>
+                </action>
+                <action id="-7" name="Set size" sid="3408552533188131" type="Portada_Letras">
+                    <param id="0" name="Width">WindowWidth</param>
+                    <param id="1" name="Height">WindowHeight</param>
+                </action>
+                <action id="-9" name="Set value" sid="3653855635604711" type="System">
+                    <param id="0" name="Variable">StepXPortada</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="-9" name="Set value" sid="642161073153295" type="System">
+                    <param id="0" name="Variable">StepYPortada</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="-3" name="Set position" sid="7090964281605561" type="Caballito">
+                    <param id="0" name="X">(XPortada+0.5)*StepXPortada</param>
+                    <param id="1" name="Y">(YPortada+0.5)*StepYPortada</param>
+                </action>
+                <action id="-24" name="Move to top" sid="1371599558915989" type="Portada_Letras" />
+                <action id="-9" name="Set value" sid="8970950428546523" type="System">
+                    <param id="0" name="Variable">StupidCounter</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7419527525425205">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4643816125249887" type="System">
+                    <param id="0" name="Interval (seconds)">1.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-3" name="Set position" sid="5405282422607556" type="Caballito">
+                    <param id="0" name="X">(XPortada+0.5)*StepXPortada</param>
+                    <param id="1" name="Y">(YPortada+0.5)*StepYPortada</param>
+                </action>
+                <action id="-12" name="Set group active" sid="3382225902956445" type="System">
+                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3983786979744788">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5787755220492113" type="System" />
+                <condition id="-1" name="Compare X" sid="9570192114034582" type="Caballito">
+                    <param id="0" name="Comparison">1</param>
+                    <param id="1" name="X co-ordinate">(XPortada+0.5)*StepXPortada</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="9623550758789764" type="Caballito">
+                    <param id="0" name="Comparison">1</param>
+                    <param id="1" name="Y co-ordinate">(YPortada+0.5)*StepYPortada</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="6344155594694935" type="Caballito">
+                    <param id="0" name="Angle">angle(Caballito.X, Caballito.Y, (XPortada+0.5)*StepXPortada, (YPortada+0.5)*StepYPortada)</param>
+                    <param id="1" name="Distance">distance(Caballito.X, Caballito.Y, (XPortada+0.5)*StepXPortada, (YPortada+0.5)*StepYPortada)/4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="Mueve el caballo de portada en una dirección al azar" inactive="1" sid="2886291901471265" title="MoverCaballoPortada">
+            <sub-events>
+                <event-block sid="6956500674613311">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="9929181097430167" type="System">
+                            <param id="0" name="Variable">rand</param>
+                            <param id="1" name="Value">int(random(0,8))</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5157410192921666" type="System">
+                            <param id="0" name="Variable">StupidCounter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3156460541591878">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2772068133362051" type="System">
+                                    <param id="0" name="Variable">StupidCounter</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="1089484683344917" type="System">
+                                    <param id="0" name="Layout">Demo</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1259692957410461">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9780806975218949" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2691391140931133" type="System">
+                                    <param id="0" name="First value">XPortada+1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Width/StepXPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="8179122141439545" type="System">
+                                    <param id="0" name="First value">YPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="6921604970645372" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="2841829132578751" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="5670356085734745" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1902147866130203">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1388958845543397" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="109222015883268" type="System">
+                                    <param id="0" name="First value">XPortada+2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Width/StepXPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="9048422950986474" type="System">
+                                    <param id="0" name="First value">YPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="6882932343874991" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="5083642092246719" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="2164063266621497" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8494198374069626">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5460681746780189" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="6563226012304777" type="System">
+                                    <param id="0" name="First value">XPortada+2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Width/StepXPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2399452804716526" type="System">
+                                    <param id="0" name="First value">YPortada+1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Height/StepYPortada)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="9676595123800187" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="7571083973231602" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="5658771587687519" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3973589813325518">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="372306626984145" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2357485220221209" type="System">
+                                    <param id="0" name="First value">XPortada+1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Width/StepXPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2004176491024005" type="System">
+                                    <param id="0" name="First value">YPortada+2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Height/StepYPortada)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="3477917027594756" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="2652558581784943" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="5139000535716214" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3475942231323234">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2762673406254799" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="4297500543543148" type="System">
+                                    <param id="0" name="First value">YPortada+2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Height/StepYPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1864626770638793" type="System">
+                                    <param id="0" name="First value">XPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="5938296395107656" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="2890126890329506" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="94085863732512" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9214768774989506">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6164770826148105" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="9200410072989085" type="System">
+                                    <param id="0" name="First value">YPortada+1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(ImagenPortada.Height/StepYPortada)</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1504614255080728" type="System">
+                                    <param id="0" name="First value">XPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="7246487081419287" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="5090005509884046" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="9220268718548662" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4662266461366492">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7344131093021161" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1043790657190449" type="System">
+                                    <param id="0" name="First value">XPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="5746453190751606" type="System">
+                                    <param id="0" name="First value">YPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="5864594701432098" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="2029473492647205" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8873323754940633" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8788246525492068">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5718399911438855" type="System">
+                                    <param id="0" name="Variable">rand</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2389480125745003" type="System">
+                                    <param id="0" name="First value">XPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="6998362605324934" type="System">
+                                    <param id="0" name="First value">YPortada</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="4725254707173693" type="System">
+                                    <param id="0" name="Variable">XPortada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="4220729364776196" type="System">
+                                    <param id="0" name="Variable">YPortada</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="601791630052968" type="System">
+                                    <param id="0" name="Group name">&quot;MoverCaballoPortada&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="30252388508815">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6116731889685158" type="Touch">
+                    <param id="0" name="Object">Portada_Fondo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3957402081244197" type="System">
+                    <param id="0" name="Layout">Demo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5013189021819781">
+            <conditions>
+                <condition id="1" name="On any click" sid="4506605856986167" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8218894802266344" type="System">
+                    <param id="0" name="Layout">Demo</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

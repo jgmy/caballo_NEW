@@ -110,6 +110,10 @@
                             <param id="0" name="X">0</param>
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
+                        <action id="-9" name="Set value" sid="709535051774740" type="System">
+                            <param id="0" name="Variable">Fading</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="7205407219800464">

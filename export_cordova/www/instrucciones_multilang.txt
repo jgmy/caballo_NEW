@@ -1,0 +1,16 @@
+﻿es|1|Descubre el refrán oculto en el tablero.
+es|2|Mueve el caballo en forma de L,
+es|3|Dos casillas recto y una en perpendicular.
+es|4|No puedes pisar dos veces la misma casilla
+es|5|Controles: ratón, táctil, teclado, mando de TV.
+es|6|Teclas: Flechas (←↑↓→) mover; Intro/OK colocar.
+es|7|Deshacer con Rewind (⏪/⏮) / Retroceso (⌫) / Cero (0).
+es|8|¡¡Suerte!!
+en|1|Discover the Spanish proverb hidden in the board.
+en|2|Move the knight in an L shape,
+en|3|Two squares away horizontally and one square vertically, or vice versa.
+en|4|You can't land twice on the same tile.
+en|5|Control with mouse, touchscreen, keyboard or TV remote.
+en|6|Move with keyboard or remote: Arrows (←↑↓→) move, Enter/OK puts.
+en|7|Undo with Rewind (⏪/⏮) / Backspace (⌫) / Zero (0).
+en|8|Good luck!!

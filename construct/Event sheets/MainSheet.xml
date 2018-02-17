@@ -33,7 +33,7 @@
                     </conditions>
                     <actions>
                         <action id="-15" name="Set visible" sid="2731376342588599" type="Debug">
-                            <param id="0" name="Visibility">1</param>
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>

@@ -1,0 +1,40 @@
+﻿{
+	"id": "com.josemoyablogspotcom.caballofull",
+	"version": "2.0.2",
+	"name": "Caballo_Fullscreen",
+	"description": "Salto del Caballo, el pasatiempo clásico.",
+	"author": "Jose Gabriel Moya Yangüela",
+	"email": "saltocaballo@apagada.com",
+	"website": "http://josemoya.blogspot.com",
+	"fullscreen": "true",
+	"useragent": null,
+	"orientation": "default",
+	"icons": [{
+		"src": "www/icon-256.png",
+		"width": 256,
+		"height": 256,
+		"density": "xxxhdpi"
+	}, {
+		"src": "www/icon-128.png",
+		"width": 128,
+		"height": 128,
+		"density": "xhdpi"
+	}],
+	"plugins": [
+		{ "id": "cordova-custom-config", "version": null },
+		{ "id": "cordova-plugin-file", "version": null },
+		{ "id": "cordova-plugin-inappbrowser", "version": null },
+		{ "id": "cordova-plugin-statusbar", "version": null },
+		{ "id": "cordova-plugin-whitelist", "version": null },
+		{ "id": "cordova-plugin-wkwebview-engine", "version": null }
+	],
+	"android": {
+		"min": 21,
+		"target": 21,
+		"plugins": []
+	},
+	"ios": {
+		"target": "8.0",
+		"plugins": []
+	}
+}

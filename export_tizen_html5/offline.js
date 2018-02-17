@@ -1,0 +1,31 @@
+﻿{
+	"version": 1518873308,
+	"fileList": [
+		"data.js",
+		"c2runtime.js",
+		"jquery-2.1.1.min.js",
+		"offlineClient.js",
+		"c2webappstart.js",
+		"images/caballito-sheet0.png",
+		"images/caballito-sheet1.png",
+		"images/cuadrito-sheet0.png",
+		"images/cuadrito-sheet1.png",
+		"images/undobutton-sheet0.png",
+		"images/undobutton-sheet1.png",
+		"images/equis-sheet0.png",
+		"images/equis-sheet1.png",
+		"images/imagenportada.png",
+		"images/portada_fondo.png",
+		"images/portada_letras.png",
+		"images/blanco.png",
+		"images/cartela-sheet0.png",
+		"icon-16.png",
+		"icon-32.png",
+		"icon-114.png",
+		"icon-128.png",
+		"icon-256.png",
+		"loading-logo.png",
+		"refranes_multilang.txt",
+		"instrucciones_multilang.txt"
+	]
+}

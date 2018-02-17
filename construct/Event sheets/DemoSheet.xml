@@ -23,6 +23,8 @@
         <variable constant="0" name="MoverX2" sid="6213724243724913" static="0" type="number">0</variable>
         <variable constant="0" name="MoverY2" sid="3287513667776328" static="0" type="number">0</variable>
         <variable comment="Stores text at salida.text in undo loops" constant="0" name="TempSalida2" sid="7203643672516409" static="0" type="text"></variable>
+        <variable constant="0" name="LastInstruct" sid="904189033890094" static="0" type="number">0</variable>
+        <variable constant="0" name="AjaxInstruc" sid="118606962713062" static="0" type="text"></variable>
         <event-group description="This group stores initialization routines." sid="9877664938547561" title="InitialGrpDmo">
             <sub-events>
                 <event-block sid="589587407311699">
@@ -60,14 +62,6 @@
                             <param id="0" name="Variable">StepY2</param>
                             <param id="1" name="Value">min(LayoutHeight/4,LayoutWidth/4)</param>
                         </action>
-                        <action disabled="1" id="-9" name="Set value" sid="1319851588117935" type="System">
-                            <param id="0" name="Variable">StepX2</param>
-                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="4606236750968889" type="System">
-                            <param id="0" name="Variable">StepY2</param>
-                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
-                        </action>
                         <action id="1" name="Append text" sid="3770384115215762" type="Debug">
                             <param id="0" name="Text">&quot;Step X=&quot; &amp; StepX2 &amp; newline</param>
                         </action>
@@ -103,6 +97,18 @@
                         <action id="-7" name="Scroll to position" sid="9931652927350685" type="System">
                             <param id="0" name="X">StepX2*2</param>
                             <param id="1" name="Y">StepY2*2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="571472795701887" type="System">
+                            <param id="0" name="Variable">UseLang</param>
+                            <param id="1" name="Value">find(AVAILABLELANG, lowercase(left(Browser.Language,2)))&lt;0 ? &quot;es&quot; : lowercase(left(Browser.Language,2))</param>
+                        </action>
+                        <action id="1" name="Request project file" sid="654976514121500" type="AJAX">
+                            <param id="0" name="Tag">&quot;instrucciones&quot;</param>
+                            <param id="1" name="File">Instrucciones_multilang.txt</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="678523899510844" type="InstrucTxt">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -363,6 +369,49 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="581137313680789">
+            <conditions>
+                <condition id="0" name="On completed" sid="947731002600985" type="AJAX">
+                    <param id="0" name="Tag">&quot;instrucciones&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="402581999440350" type="System">
+                    <param id="0" name="Variable">AjaxInstruc</param>
+                    <param id="1" name="Value">RegexReplace(Ajax.LastData, &quot;^\s&quot;,&quot;mg&quot;, &quot;&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="545666230658394" type="System">
+                    <param id="0" name="Variable">LastInstruct</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="CurrentInstruc" sid="392180761389855" static="0" type="text"></variable>
+                <event-block sid="436656610070253">
+                    <conditions>
+                        <condition id="-10" name="For" sid="269735043018062" type="System">
+                            <param id="0" name="Name">&quot;loop&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">RegexMatchCount(AjaxInstruc,&quot;^(\s)*&quot;&amp;UseLang&amp;&quot;(\s)*\|.*$&quot;,&quot;gm&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="792883857009757" type="System">
+                            <param id="0" name="Variable">CurrentInstruc</param>
+                            <param id="1" name="Value">RegexMatchAt(AjaxInstruc,&quot;^(\s)*&quot;&amp;UseLang&amp;&quot;(\s)*\|.*$&quot;,&quot;gm&quot;,loopindex(&quot;loop&quot;))</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="986641648771900" type="InstrucTxt">
+                            <param id="0" name="X">int(tokenat(CurrentInstruc,1,&quot;|&quot;))-1</param>
+                            <param id="1" name="Value">tokenat(CurrentInstruc,2,&quot;|&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="124784691642904" type="System">
+                            <param id="0" name="Variable">LastInstruct</param>
+                            <param id="1" name="Value">max(LastInstruct,int(tokenat(CurrentInstruc,1,&quot;|&quot;))-1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="Manages Solutions" inactive="1" sid="7245251627494988" title="SolutionGrpDmo">
             <sub-events>
                 <event-block sid="9795762650226228">
@@ -646,6 +695,10 @@
                                                     <param id="1" name="Layer">&quot;Letras&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="4" name="Set animation" sid="592799748344186" type="Equis">
+                                                    <param id="0" name="Animation">StepX2&lt;=120 ? &quot;Default&quot;:&quot;DefaultG&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
                                                 <action id="-7" name="Set size" sid="6674234027353593" type="Equis">
                                                     <param id="0" name="Width">StepX2</param>
                                                     <param id="1" name="Height">StepY2</param>
@@ -861,7 +914,7 @@
                                 <condition id="-8" name="Compare two values" sid="577705520209741" type="System">
                                     <param id="0" name="First value">pointer2</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">4</param>
+                                    <param id="2" name="Second value">LastInstruct</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1133,6 +1186,10 @@
                                                     <param id="1" name="Layer">&quot;Letras&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="4" name="Set animation" sid="595793888020604" type="Equis">
+                                                    <param id="0" name="Animation">StepX2&lt;=120 ? &quot;Default&quot;:&quot;DefaultG&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
                                                 <action id="-7" name="Set size" sid="9287730175633176" type="Equis">
                                                     <param id="0" name="Width">StepX2</param>
                                                     <param id="1" name="Height">StepY2</param>
@@ -1388,30 +1445,19 @@
         </event-group>
         <event-group description="Muestra el texto de Instrucciones correspondiente al valor de Puntero" sid="4199124761888084" title="Mostrar_Instrucciones">
             <sub-events>
-                <event-block sid="7512329522702635">
-                    <conditions>
-                        <condition id="-13" name="Pick nth instance" sid="5047523029915309" type="System">
-                            <param id="0" name="Object">Instrucciones</param>
-                            <param id="1" name="Instance">pointer2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="6684168186825961" type="Instrucciones">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="2647203491208442">
-                    <conditions>
-                        <condition id="-13" name="Pick nth instance" sid="3086170802201031" type="System">
-                            <param id="0" name="Object">Instrucciones</param>
-                            <param id="1" name="Instance">pointer2+1</param>
-                        </condition>
-                    </conditions>
+                    <conditions />
                     <actions>
                         <action id="-15" name="Set visible" sid="8350640051224439" type="Instrucciones">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="0" name="Set text" sid="840535770769326" type="Instrucciones">
+                            <param id="0" name="Text">InstrucTxt.At(pointer2)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="753495682291199" type="Cartela">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="449856554320191" type="Cartela" />
                     </actions>
                     <sub-events>
                         <event-block sid="4251877893661067">
@@ -1422,25 +1468,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-3" name="Set position" sid="3948665653939705" type="Instrucciones">
-                                    <param id="0" name="X">StepX2*0.1</param>
-                                    <param id="1" name="Y">StepY2*0.1</param>
-                                </action>
-                                <action disabled="1" id="-7" name="Set size" sid="2279715573565502" type="Instrucciones">
-                                    <param id="0" name="Width">StepX2*3.80</param>
-                                    <param id="1" name="Height">StepY2*1.80</param>
-                                </action>
-                                <action disabled="1" id="3" name="Set font size" sid="2961646073023263" type="Instrucciones">
-                                    <param id="0" name="Size (pt)">StepX2/6</param>
-                                </action>
-                                <action disabled="1" id="-7" name="Set size" sid="2466803276361336" type="Blanco">
-                                    <param id="0" name="Width">Instrucciones.Width</param>
-                                    <param id="1" name="Height">Instrucciones.Height</param>
-                                </action>
-                                <action disabled="1" id="-3" name="Set position" sid="6489099046247701" type="Blanco">
-                                    <param id="0" name="X">Instrucciones.X</param>
-                                    <param id="1" name="Y">Instrucciones.Y</param>
-                                </action>
                                 <action id="-3" name="Set position" sid="6921254933358209" type="Cartela">
                                     <param id="0" name="X">StepX2*2</param>
                                     <param id="1" name="Y">StepY2/2</param>
@@ -1462,10 +1489,6 @@
                                 </action>
                                 <action id="-24" name="Move to top" sid="8625711570972983" type="Cartela" />
                                 <action id="-24" name="Move to top" sid="5824471303148606" type="Instrucciones" />
-                                <action disabled="1" id="-12" name="Set group active" sid="4276644830460262" type="System">
-                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="3827030179937586">
@@ -1476,22 +1499,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-3" name="Set position" sid="1562554393411799" type="Instrucciones">
-                                    <param id="0" name="X">StepX2*0.10</param>
-                                    <param id="1" name="Y">StepY2*2.1</param>
-                                </action>
-                                <action disabled="1" id="-7" name="Set size" sid="2501159223572862" type="Instrucciones">
-                                    <param id="0" name="Width">StepX2*3.80</param>
-                                    <param id="1" name="Height">StepY2*1.80</param>
-                                </action>
-                                <action disabled="1" id="-7" name="Set size" sid="3470598003394047" type="Blanco">
-                                    <param id="0" name="Width">Instrucciones.Width</param>
-                                    <param id="1" name="Height">Instrucciones.Height</param>
-                                </action>
-                                <action disabled="1" id="-3" name="Set position" sid="2111500064818026" type="Blanco">
-                                    <param id="0" name="X">Instrucciones.X</param>
-                                    <param id="1" name="Y">Instrucciones.Y</param>
-                                </action>
                                 <action id="-3" name="Set position" sid="1439914538077195" type="Cartela">
                                     <param id="0" name="X">StepX2*2</param>
                                     <param id="1" name="Y">StepY2*3.5</param>
@@ -1513,10 +1520,6 @@
                                 </action>
                                 <action id="-24" name="Move to top" sid="5137828762247606" type="Cartela" />
                                 <action id="-24" name="Move to top" sid="7132267728303184" type="Instrucciones" />
-                                <action disabled="1" id="-12" name="Set group active" sid="2909569985601801" type="System">
-                                    <param id="0" name="Group name">&quot;Mostrar_Instrucciones&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="7746626239872908">

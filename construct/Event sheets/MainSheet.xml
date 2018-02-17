@@ -53,14 +53,6 @@
                             <param id="1" name="Height">2</param>
                             <param id="2" name="Depth">1</param>
                         </action>
-                        <action disabled="1" id="-9" name="Set value" sid="4397572798628973" type="System">
-                            <param id="0" name="Variable">StepX</param>
-                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="5761395505639511" type="System">
-                            <param id="0" name="Variable">StepY</param>
-                            <param id="1" name="Value">min(WindowHeight/4,WindowWidth/4)</param>
-                        </action>
                         <action id="-9" name="Set value" sid="6924720387032485" type="System">
                             <param id="0" name="Variable">StepX</param>
                             <param id="1" name="Value">min(LayoutHeight/4,LayoutWidth/4)</param>

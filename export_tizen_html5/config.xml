@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://com.josemoyablogspotcom.caballofull" version="1.1.1" viewmodes="maximized">
+	<tizen:application required_version="2.2"/>
+	<author href="http://josemoya.blogspot.com" email="saltocaballo@apagada.com">Jose Gabriel Moya Yangüela</author>
+	<content src="index.html" />
+	<description>Salto del Caballo, el pasatiempo clásico.</description>
+	<icon src="icon-128.png" width="128" height="128" />
+	<name>Caballo_Fullscreen</name>
+	<tizen:setting context-menu="disable" hwkey-event="enable" background-support="disable" encryption="disable" install-location="auto" screen-orientation="auto-rotation" />
+	<feature name="http://tizen.org/feature/screen.size.all"/>
+</widget>

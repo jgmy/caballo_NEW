@@ -284,6 +284,9 @@
         <object-type name="AJAX" sid="267978977228263">
             <plugin id="AJAX" />
         </object-type>
+        <object-type global="1" name="InstrucTxt" sid="923468847532487">
+            <plugin id="Arr" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -322,6 +325,7 @@
         </file-folder>
         <file-folder name="Texts">
             <file name="refranes_multilang.txt" />
+            <file name="Instrucciones_multilang.txt" />
         </file-folder>
     </files-folder>
 </c2project>

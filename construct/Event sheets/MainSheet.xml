@@ -33,7 +33,7 @@
                     </conditions>
                     <actions>
                         <action id="-15" name="Set visible" sid="2731376342588599" type="Debug">
-                            <param id="0" name="Visibility">0</param>
+                            <param id="0" name="Visibility">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -69,10 +69,10 @@
                             <param id="0" name="Variable">StepY</param>
                             <param id="1" name="Value">min(LayoutHeight/4,LayoutWidth/4)</param>
                         </action>
-                        <action id="1" name="Append text" sid="5406302657661144" type="Debug">
+                        <action disabled="1" id="1" name="Append text" sid="5406302657661144" type="Debug">
                             <param id="0" name="Text">&quot;Step X=&quot; &amp; StepX &amp; newline</param>
                         </action>
-                        <action id="1" name="Append text" sid="3403769536762493" type="Debug">
+                        <action disabled="1" id="1" name="Append text" sid="3403769536762493" type="Debug">
                             <param id="0" name="Text">&quot;Step Y=&quot; &amp; StepY &amp; newline</param>
                         </action>
                         <action id="3" name="Set at XY" sid="988888062114047" type="Steps_array">
@@ -89,10 +89,6 @@
                             <param id="0" name="Width">StepX*41/60</param>
                             <param id="1" name="Height">StepY*50/60</param>
                         </action>
-                        <action id="-12" name="Set group active" sid="2673541363777905" type="System">
-                            <param id="0" name="Group name">&quot;SolutionGroup&quot;</param>
-                            <param id="1" name="State">1</param>
-                        </action>
                         <action id="-7" name="Set size" sid="1462311542583002" type="UndoButton">
                             <param id="0" name="Width">StepX</param>
                             <param id="1" name="Height">StepY</param>
@@ -104,6 +100,14 @@
                         <action id="-7" name="Scroll to position" sid="2438596817528475" type="System">
                             <param id="0" name="X">StepX*2.5</param>
                             <param id="1" name="Y">StepY*2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="123082191329528" type="System">
+                            <param id="0" name="Variable">UseLang</param>
+                            <param id="1" name="Value">find(AVAILABLELANG, lowercase(left(Browser.Language,2)))&lt;0 ? &quot;es&quot; : lowercase(left(Browser.Language,2))</param>
+                        </action>
+                        <action id="1" name="Request project file" sid="146914580121914" type="AJAX">
+                            <param id="0" name="Tag">&quot;refranes&quot;</param>
+                            <param id="1" name="File">refranes_multilang.txt</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -288,18 +292,69 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <variable constant="0" name="CurrentData" sid="301332541171513" static="0" type="text"></variable>
+        <variable constant="0" name="Currentline" sid="879261936084151" static="0" type="number">0</variable>
+        <event-block sid="211951017107811">
+            <conditions>
+                <condition id="0" name="On completed" sid="664218842234082" type="AJAX">
+                    <param id="0" name="Tag">&quot;refranes&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="823727343139305" type="System">
+                    <param id="0" name="Variable">AjaxRefranes</param>
+                    <param id="1" name="Value">RegexReplace(ajax.LastData, &quot;[\r]&quot;,&quot;g&quot;, &quot;&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="861372667850768" type="System">
+                    <param id="0" name="Variable">AjaxRefranes</param>
+                    <param id="1" name="Value">RegexReplace(AjaxRefranes, &quot;^\s&quot;,&quot;mg&quot;, &quot;&quot;)</param>
+                </action>
+                <action disabled="1" id="-9" name="Set value" sid="826011299455183" type="System">
+                    <param id="0" name="Variable">TodosLosRefranes</param>
+                    <param id="1" name="Value">RegexReplace(AjaxRefranes,&quot;^(?!&quot;&amp;UseLang&amp;&quot;es\|).*$&quot;,&quot;m&quot;,&quot;&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="741678842862753" type="System">
+                    <param id="0" name="Variable">Currentline</param>
+                    <param id="1" name="Value">RegexMatchCount(AjaxRefranes,&quot;^(\s)*&quot;&amp;UseLang&amp;&quot;(\s)*\|.*$&quot;,&quot;gm&quot;)</param>
+                </action>
+                <action id="-12" name="Set group active" sid="856559428180247" type="System">
+                    <param id="0" name="Group name">&quot;SolutionGroup&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="329532005067701">
+                    <conditions>
+                        <condition id="-10" name="For" sid="783414106700483" type="System">
+                            <param id="0" name="Name">&quot;loop&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">RegexMatchCount(AjaxRefranes,&quot;^(\s)*&quot;&amp;UseLang&amp;&quot;(\s)*\|.*$&quot;,&quot;gm&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="394582616196049" type="System">
+                            <param id="0" name="Variable">CurrentData</param>
+                            <param id="1" name="Value"> RegexMatchAt(AjaxRefranes,&quot;^(\s)*&quot;&amp;UseLang&amp;&quot;(\s)*\|.*$&quot;,&quot;gm&quot;,loopindex(&quot;loop&quot;))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="415019429824877" type="System">
+                            <param id="0" name="Variable">CurrentData</param>
+                            <param id="1" name="Value">RegexReplace(CurrentData,&quot;^\s*..\s*\|&quot;,&quot;g&quot;,&quot;&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="988097790965126" type="System">
+                            <param id="0" name="Variable">TodosLosRefranes</param>
+                            <param id="1" name="Value">TodosLosRefranes &amp; (TodosLosRefranes&gt;&quot;&quot; ? &quot;#&quot;: &quot;&quot; ) &amp;CurrentData</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="Manages Solutions" inactive="1" sid="5605225178084954" title="SolutionGroup">
             <sub-events>
                 <event-block sid="1791047349794355">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="6891330324784929" type="System" />
-                    </conditions>
+                    <conditions />
                     <actions>
                         <action id="0" name="Set text" sid="466230081907025" type="Solutions">
                             <param id="0" name="Text">replace(Solutions.Text,&quot;#&quot;,newline)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="453676464047439" type="Refranes">
-                            <param id="0" name="Text">replace(Refranes.Text,&quot;#&quot;,newline)</param>
                         </action>
                         <action id="-9" name="Set value" sid="4242659323666986" type="System">
                             <param id="0" name="Variable">SolutionCount</param>
@@ -325,41 +380,12 @@
                         <action id="1" name="Append text" sid="1606704104711272" type="Debug">
                             <param id="0" name="Text">&quot;SolutionGroup Active&quot; &amp; newline</param>
                         </action>
+                        <action id="-9" name="Set value" sid="817524696301380" type="System">
+                            <param id="0" name="Variable">TodosLosRefranes</param>
+                            <param id="1" name="Value">replace(TodosLosRefranes,&quot;#&quot;,newline)</param>
+                        </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="920678016629469">
-                            <conditions>
-                                <condition id="-33" name="Pick by comparison" sid="798767545589188" type="System">
-                                    <param id="0" name="Object">Refranes</param>
-                                    <param id="1" name="Expression">Refranes.lang</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">lowercase(left(Browser.Language,2))</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="700624755956122" type="System">
-                                    <param id="0" name="Variable">TodosLosRefranes</param>
-                                    <param id="1" name="Value">Refranes.Text</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="987541545009164">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="502429020908940" type="System" />
-                                <condition id="-33" name="Pick by comparison" sid="762833570568314" type="System">
-                                    <param id="0" name="Object">Refranes</param>
-                                    <param id="1" name="Expression">Refranes.lang</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">&quot;es&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="239480930085893" type="System">
-                                    <param id="0" name="Variable">TodosLosRefranes</param>
-                                    <param id="1" name="Value">Refranes.Text</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="2594875718710585">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="3315647752874204" type="System">
@@ -369,7 +395,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="644565553415771" type="System">
                                     <param id="0" name="Variable">RefranCount</param>
-                                    <param id="1" name="Value">tokencount(Refranes.text,newline)</param>
+                                    <param id="1" name="Value">tokencount(TodosLosRefranes,newline)</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="6257928958993835" type="System">
                                     <param id="0" name="Variable">RefranLine</param>
@@ -428,6 +454,10 @@
                                     <param id="0" name="Group name">&quot;SolutionGroup2&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
+                                <action id="-12" name="Set group active" sid="291235509917702" type="System">
+                                    <param id="0" name="Group name">&quot;SolutionGroup&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="8836037462911127">
@@ -443,6 +473,10 @@
                                 <action id="-12" name="Set group active" sid="3177124773203699" type="System">
                                     <param id="0" name="Group name">&quot;SolutionGroup2&quot;</param>
                                     <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="688587959063213" type="System">
+                                    <param id="0" name="Group name">&quot;SolutionGroup&quot;</param>
+                                    <param id="1" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -485,7 +519,7 @@
                                             <param id="1" name="Y">1</param>
                                             <param id="2" name="Value">int(tokenat(MovInitial,1+loopIndex(&quot;movindex&quot;)*2,&quot;,&quot;))</param>
                                         </action>
-                                        <action id="1" name="Append text" sid="4212685145060625" type="Debug">
+                                        <action disabled="1" id="1" name="Append text" sid="4212685145060625" type="Debug">
                                             <param id="0" name="Text">&quot;Mov (&quot; &amp; loopindex(&quot;movindex&quot;) &amp; &quot;)=&quot; &amp; Mov.at(loopindex(&quot;movindex&quot;),0) &amp; &quot;,&quot; &amp; Mov.At(loopindex(&quot;movindex&quot;),1) &amp; newline</param>
                                         </action>
                                     </actions>
@@ -543,7 +577,7 @@
                         </event-group>
                     </sub-events>
                 </event-block>
-                <event-group description="" sid="6917625792004953" title="SolutionGroup2">
+                <event-group description="" inactive="1" sid="6917625792004953" title="SolutionGroup2">
                     <sub-events>
                         <event-block sid="7110787106633433">
                             <conditions />

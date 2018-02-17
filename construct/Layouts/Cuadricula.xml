@@ -489,36 +489,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Refranes" uid="18">
-                    <properties>
-                        <text>A-buen-en-ten-de-dor-po-cas-pa-la-bras-bas-tan|A buen entendedor, pocas palabras bastan|Quien es discreto, no necesita grandes explicaciones.#A-ca-ba-llo-re-ga-la-do-no-le-mi-res-el-dien-te|A caballo regalado, no le mires el diente|Se pueden disculpar los defectos en aquello que nada cuesta#A-ca-da-cer-do-le-lle-ga-su-san-Mar-tín|A cada cerdo le llega su San Martín|Indica que el culpable pagará su ofensa, aunque sea tarde#A-Dios-ro-gan-do-y-con-el-ma-zo-dan-do|A Dios rogando y con el mazo dando|No nos dará la fortuna lo que no obtengamos con nuestro esfuerzo.#A-gos-to-y-Sep-tiem-bre-no-du-ran-siem-pre.|Agosto y septiembre no duran siempre|Hay que guardar la cosecha para todo el año.#A-gua-co-rrien-te-no-ma-ta-a-la-gen-te|Agua corriente, no mata a la gente|Basada en la creencia común de que el agua de los arroyos es potable.#A-gua-de-ma-yo-no-ca-la-el-sa-yo|Agua de mayo no cala el sayo|Indica que algo no nos preocupa#Has-ta-el-cua-ren-ta-de-ma-yo-no-te-qui-tes-el-sa-yo|Hasta el cuarenta de mayo, no te quites el sayo|Hasta principios de junio sigue haciendo mal tiempo#A-gua-que-no-has-de-be-ber-dé-ja-la-co-rrer|Agua que no has de beber, déjala correr|No hay que inmiscuirse en asuntos ajenos#A-in-vier-no-llu-vio-so-ve-ra-no-a-bun-do-so|A invierno lluvioso, verano abundoso|#A-la-ca-ma-no-te-i-rás-sin-sa-ber-u-na-co-sa-más|A la cama no te irás sin saber una cosa más|Siempre se aprenden cosas nuevas#A-quien-Dios-se-la-dé-san-Pe-dro-se-la-ben-di-ga|A quien Dios se la dé, san Pedro se la bendiga|Que acate cada cual su suerte#An-tes-se-pi-lla-al-men-ti-ro-so-que-al-co-jo|Antes se pilla al mentiroso que al cojo|Los embustes siempre se descubren#A-pe-rro-fla-co-to-do-son-pul-gas|A perro flaco, todo son pulgas|La desgracia se ensaña con el débil#Bue-na-es-la-nie-ve-que-en-su-tiem-po-vie-ne|Buena es la nieve que en su tiempo viene|Todo es bueno si sucede oportunamente#Ca-ba-llo-gran-de-an-de-o-no-an-de|Caballo grande, ande o no ande|Por presunción, se descuida la utilidad#Ca-ba-llo-que-vue-la-no-quie-re-es-pue-la|Caballo que vuela no conoce espuela|Quien es voluntarioso no necesita ser animado#Ca-ba-llo-que-al-can-za-pa-sar-que-rrí-a|Caballo que alcanza, pasar querría|La ambición no conoce límite#Ca-da-ma-es-tri-llo-tie-ne-su-li-bri-llo|Cada maestrillo tiene su librillo|Cada cual hace las cosas a su manera#Ca-sa-con-dos-puer-tas-ma-la-es-de-guar-dar|Casa con dos puertas, mala es de guardar|#Di-me-con-quién-an-das-y-te-di-ré-quién-e-res|Dime con quien andas y te diré quién eres|La compañía influye grandemente en las costumbres#El-o-jo-del-a-mo-en-gor-da-al-ca-ba-llo|El ojo del amo engorda al caballo|La prosperidad de un negocio requiere de supervisión#En-bo-ca-ce-rra-da-no-en-tran-mos-cas|En boca cerrada, no entran moscas|Se deben callar ciertas cosas#En-ca-sa-de-he-rre-ro-cu-cha-ra-de-pa-lo|En casa de herrero, cuchara de palo|No todo el mundo hace lo que predica#Más-va-le-un-to-ma-que-dos-te-da-ré|Más vale un «toma» que dos «te daré»|Cumplen más las acciones que las promesas#Muer-to-el-pe-rro-se-a-ca-bó-la-ra-bia|Muerto el perro, se acabó la rabia|El problema cesa al desaparecer su causa.#Cuan-do-u-na-puer-ta-se-cie-rra-o-tra-se-a-bre|Cuando una puerta se cierra, otra se abre|Nunca hay que perder la esperanza.#Pien-sa-el-la-drón-que-to-dos-son-de-su-con-di-ción|Piensa el ladrón que todos son de su condición|El malo se excusa atribuyéndoles a los demás las mismas acciones que él hace.#Nun-ca-di-gas-de-es-ta-a-gua-no-be-be-ré|Nunca digas «de esta agua no beberé»|El futuro puede hacernos caer en lo que hoy criticamos</text>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-16</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <instance-variables>
-                        <lang>es</lang>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-1.5</x>
-                        <y>300</y>
-                        <z>0</z>
-                        <width>300</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="Salida" uid="19">
                     <properties>
                         <text></text>
@@ -1182,38 +1152,7 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances>
-                <instance type="Refranes" uid="104">
-                    <properties>
-                        <text>A-buen-en-ten-de-dor-po-cas-pa-la-bras-bas-tan|A buen entendedor, pocas palabras bastan|A smart person does not need long explanations.#A-ca-ba-llo-re-ga-la-do-no-le-mi-res-el-dien-te|A caballo regalado, no le mires el diente|Don&apos;t worry if things have defects.#A-ca-da-cer-do-le-lle-ga-su-san-Mar-tín|A cada cerdo le llega su San Martín|Soon or after, everyone will pay for their deeds#A-Dios-ro-gan-do-y-con-el-ma-zo-dan-do|A Dios rogando y con el mazo dando|Fortune will not give us anything if we don&apos;t make an effort.#A-gos-to-y-Sep-tiem-bre-no-du-ran-siem-pre.|Agosto y septiembre no duran siempre|You must save, for the winter is coming.#A-gua-co-rrien-te-no-ma-ta-a-la-gen-te|Agua corriente, no mata a la gente|There is a belief that spring water is healthy.#A-gua-de-ma-yo-no-ca-la-el-sa-yo|Hasta el cuarenta de mayo, no te quites el sayo|Don&apos;t expect good weather until the end of june.#A-gua-que-no-has-de-be-ber-dé-ja-la-co-rrer|Agua que no has de beber, déjala correr|Don&apos;t miss with other people&apos;s bussinessess.#A-in-vier-no-llu-vio-so-ve-ra-no-a-bun-do-so|A invierno lluvioso, verano abundoso|You need the winter rains to get a nice summer crop.#A-la-ca-ma-no-te-i-rás-sin-sa-ber-u-na-co-sa-más|A la cama no te irás sin saber una cosa más|You will always learn#A-quien-Dios-se-la-dé-san-Pe-dro-se-la-ben-di-ga|A quien Dios se la dé, san Pedro se la bendiga|Everybody should accept their fate.#An-tes-se-pi-lla-al-men-ti-ro-so-que-al-co-jo|Antes se pilla al mentiroso que al cojo|The liar will be find#A-pe-rro-fla-co-to-do-son-pul-gas|A perro flaco, todo son pulgas|Fortune always hits the weak#Bue-na-es-la-nie-ve-que-en-su-tiem-po-vie-ne|Buena es la nieve que en su tiempo viene|Everything is good when it happens in its time#Ca-ba-llo-gran-de-an-de-o-no-an-de|Caballo grande, ande o no ande|People prefer to brag about things rather than having useful things.#Ca-ba-llo-que-vue-la-no-quie-re-es-pue-la|Caballo que vuela no conoce espuela|If you have the will, you don&apos;t need to be motivated#Ca-ba-llo-que-al-can-za-pa-sar-que-rrí-a|Caballo que alcanza, pasar querría|Ambition knows no limit#Ca-da-ma-es-tri-llo-tie-ne-su-li-bri-llo|Cada maestrillo tiene su librillo|I do it my way#Ca-sa-con-dos-puer-tas-ma-la-es-de-guar-dar|Casa con dos puertas, mala es de guardar|You can&apos;t guard what is open.#Di-me-con-quién-an-das-y-te-di-ré-quién-e-res|Dime con quien andas y te diré quién eres|Your friends influence you#El-o-jo-del-a-mo-en-gor-da-al-ca-ba-llo|El ojo del amo engorda al caballo|You must keep an eye on your bussiness#En-bo-ca-ce-rra-da-no-en-tran-mos-cas|En boca cerrada, no entran moscas|This is a quiet bussiness#En-ca-sa-de-he-rre-ro-cu-cha-ra-de-pa-lo|En casa de herrero, cuchara de palo|You say one thing and do the other#Más-va-le-un-to-ma-que-dos-te-da-ré|Más vale un «toma» que dos «te daré»|Do it and do not promise it.#Muer-to-el-pe-rro-se-a-ca-bó-la-ra-bia|Muerto el perro, se acabó la rabia|Problem ceases when cause ceases.</text>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-16</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <instance-variables>
-                        <lang>en</lang>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-99</x>
-                        <y>445</y>
-                        <z>0</z>
-                        <width>300</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-            </instances>
+            <instances />
             <effects />
         </layer>
     </layers>

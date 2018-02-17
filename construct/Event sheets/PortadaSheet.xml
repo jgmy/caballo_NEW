@@ -3,11 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>PortadaSheet</name>
     <events>
+        <variable constant="0" name="AjaxRefranes" sid="358447377085672" static="0" type="text"></variable>
         <variable constant="0" name="StepXPortada" sid="7980943928021102" static="0" type="number">0</variable>
         <variable constant="0" name="XPortada" sid="9259136471052573" static="0" type="number">0</variable>
         <variable constant="0" name="YPortada" sid="2816561322190866" static="0" type="number">0</variable>
         <variable constant="0" name="StepYPortada" sid="3793678240779652" static="0" type="number">0</variable>
         <variable constant="0" name="StupidCounter" sid="9695939953072411" static="0" type="number">0</variable>
+        <variable constant="1" name="AVAILABLELANG" sid="721861136090987" static="0" type="text">es en</variable>
+        <variable constant="0" name="UseLang" sid="717115631821250" static="0" type="text"></variable>
         <variable comment="Random number" constant="0" name="rand" sid="7887008490425373" static="0" type="number">0</variable>
         <event-block sid="9558160895359888">
             <conditions>

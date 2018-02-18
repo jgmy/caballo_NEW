@@ -8,4 +8,4 @@ It features:
 * TV remote input for SmartTVs / TV boxes.
 * Touch input for mobile devices.
 
-Open web app: [Link](jgmy.github.io/caballo_NEW/export_html_site)
+Open web app: [Link](https://jgmy.github.io/caballo_NEW/export_html_site)

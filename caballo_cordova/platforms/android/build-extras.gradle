@@ -1,2 +1,1 @@
 ext.cdvBuildMultipleApks=false
-ext.cdvReleaseSigningPropertiesFile=..\..\..\..\.gradle\gradle.properties

@@ -17,7 +17,7 @@ The app is made with [Construct2](https://www.scirra.com), a *proprietary* game 
 Different folders are used for the different "exports" from C2:
 
  folder | format | description
- ---- | ----
+ ---- | ---- | ----
  /caballo_cordova | html5 source | in cordova format, used to compile android app.
  /compiled_apk	  | apk binary | compiled android app, includes signed and debug builds
  /construct     | .caproj source | actual source in proprietary Construct2 format.

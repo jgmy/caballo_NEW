@@ -23,7 +23,7 @@
         <variable constant="0" name="MoverX2" sid="6213724243724913" static="0" type="number">0</variable>
         <variable constant="0" name="MoverY2" sid="3287513667776328" static="0" type="number">0</variable>
         <variable comment="Stores text at salida.text in undo loops" constant="0" name="TempSalida2" sid="7203643672516409" static="0" type="text"></variable>
-        <variable constant="0" name="LastInstruct" sid="904189033890094" static="0" type="number">0</variable>
+        <variable constant="0" name="LastInstruct" sid="904189033890094" static="0" type="number">5</variable>
         <variable constant="0" name="AjaxInstruc" sid="118606962713062" static="0" type="text"></variable>
         <event-group description="This group stores initialization routines." sid="9877664938547561" title="InitialGrpDmo">
             <sub-events>
@@ -269,6 +269,9 @@
                                 <action id="-26" name="Move to layer" sid="9060301615676106" type="TileText">
                                     <param id="0" name="Layer">&quot;Letras&quot;</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="966670220198608" type="TileText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="6207576105097943">
@@ -410,7 +413,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="124784691642904" type="System">
                             <param id="0" name="Variable">LastInstruct</param>
-                            <param id="1" name="Value">max(LastInstruct,int(tokenat(CurrentInstruc,1,&quot;|&quot;))-1)</param>
+                            <param id="1" name="Value">max(LastInstruct,int(tokenat(CurrentInstruc,1,&quot;|&quot;)))</param>
                         </action>
                     </actions>
                 </event-block>

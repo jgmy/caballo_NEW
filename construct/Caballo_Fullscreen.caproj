@@ -8,7 +8,7 @@
     <author-website>http://josemoya.blogspot.com</author-website>
     <app-id>com.josemoyablogspotcom.caballofull</app-id>
     <unique-id>gi98tkofbp42</unique-id>
-    <saved-with-version>25300</saved-with-version>
+    <saved-with-version>25500</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -39,6 +39,7 @@
         <prop name="Clear background">No</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">On (scale mode)</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Preview browser">Chrome</prop>
         <prop name="Preview mode">HTTP</prop>
         <prop name="Sampling">Linear</prop>

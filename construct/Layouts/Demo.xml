@@ -592,7 +592,7 @@
                 <instance type="TileText" uid="66">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -623,7 +623,7 @@
                 <instance type="TileText" uid="67">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -654,7 +654,7 @@
                 <instance type="TileText" uid="68">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -685,7 +685,7 @@
                 <instance type="TileText" uid="69">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -716,7 +716,7 @@
                 <instance type="TileText" uid="70">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -747,7 +747,7 @@
                 <instance type="TileText" uid="71">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -778,7 +778,7 @@
                 <instance type="TileText" uid="72">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -809,7 +809,7 @@
                 <instance type="TileText" uid="73">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -840,7 +840,7 @@
                 <instance type="TileText" uid="74">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -871,7 +871,7 @@
                 <instance type="TileText" uid="75">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -902,7 +902,7 @@
                 <instance type="TileText" uid="76">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -933,7 +933,7 @@
                 <instance type="TileText" uid="77">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-17,400,0</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -964,7 +964,7 @@
                 <instance type="TileText" uid="78">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -995,7 +995,7 @@
                 <instance type="TileText" uid="79">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -1026,7 +1026,7 @@
                 <instance type="TileText" uid="80">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -1057,7 +1057,7 @@
                 <instance type="TileText" uid="81">
                     <properties>
                         <text>Borrame</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>187,175,179</color>
                         <horizontal-alignment>Center</horizontal-alignment>

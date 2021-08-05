@@ -3,14 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>PortadaSheet</name>
     <events>
-        <variable constant="0" name="AjaxRefranes" sid="358447377085672" static="0" type="text"></variable>
-        <variable constant="0" name="StepXPortada" sid="7980943928021102" static="0" type="number">0</variable>
+        <variable comment="Ajax string containing refranes_multilang.txt" constant="0" name="AjaxRefranes" sid="358447377085672" static="0" type="text"></variable>
+        <variable comment="StepX (square width) for portada" constant="0" name="StepXPortada" sid="7980943928021102" static="0" type="number">0</variable>
         <variable constant="0" name="XPortada" sid="9259136471052573" static="0" type="number">0</variable>
         <variable constant="0" name="YPortada" sid="2816561322190866" static="0" type="number">0</variable>
-        <variable constant="0" name="StepYPortada" sid="3793678240779652" static="0" type="number">0</variable>
+        <variable comment="StepY (square height) for portada" constant="0" name="StepYPortada" sid="3793678240779652" static="0" type="number">0</variable>
         <variable constant="0" name="StupidCounter" sid="9695939953072411" static="0" type="number">0</variable>
-        <variable constant="1" name="AVAILABLELANG" sid="721861136090987" static="0" type="text">es en</variable>
-        <variable constant="0" name="UseLang" sid="717115631821250" static="0" type="text"></variable>
+        <comment>Available lang is hardcoded</comment>
+        <variable comment="Available languages (hardcoded)" constant="1" name="AVAILABLELANG" sid="721861136090987" static="0" type="text">es en</variable>
+        <variable comment="Language to use" constant="0" name="UseLang" sid="717115631821250" static="0" type="text"></variable>
         <variable comment="Random number" constant="0" name="rand" sid="7887008490425373" static="0" type="number">0</variable>
         <event-block sid="9558160895359888">
             <conditions>
@@ -399,6 +400,19 @@
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="3957402081244197" type="System">
+                    <param id="0" name="Layout">Demo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="658095966968188">
+            <conditions>
+                <condition id="-7" name="Compare time" sid="953565962392955" type="System">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Time (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="889217653074341" type="System">
                     <param id="0" name="Layout">Demo</param>
                 </action>
             </actions>

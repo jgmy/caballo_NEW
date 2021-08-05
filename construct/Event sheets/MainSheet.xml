@@ -284,8 +284,8 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <variable constant="0" name="CurrentData" sid="301332541171513" static="0" type="text"></variable>
-        <variable constant="0" name="Currentline" sid="879261936084151" static="0" type="number">0</variable>
+        <variable comment="Buffer to read a line of data" constant="0" name="CurrentData" sid="301332541171513" static="0" type="text"></variable>
+        <variable comment="line count? Used for a test and then unused" constant="0" name="Currentline" sid="879261936084151" static="0" type="number">0</variable>
         <event-block sid="211951017107811">
             <conditions>
                 <condition id="0" name="On completed" sid="664218842234082" type="AJAX">
@@ -300,10 +300,6 @@
                 <action id="-9" name="Set value" sid="861372667850768" type="System">
                     <param id="0" name="Variable">AjaxRefranes</param>
                     <param id="1" name="Value">RegexReplace(AjaxRefranes, &quot;^\s&quot;,&quot;mg&quot;, &quot;&quot;)</param>
-                </action>
-                <action disabled="1" id="-9" name="Set value" sid="826011299455183" type="System">
-                    <param id="0" name="Variable">TodosLosRefranes</param>
-                    <param id="1" name="Value">RegexReplace(AjaxRefranes,&quot;^(?!&quot;&amp;UseLang&amp;&quot;es\|).*$&quot;,&quot;m&quot;,&quot;&quot;)</param>
                 </action>
                 <action id="-9" name="Set value" sid="741678842862753" type="System">
                     <param id="0" name="Variable">Currentline</param>
@@ -651,6 +647,9 @@
                                                     <actions>
                                                         <action id="0" name="Set text" sid="60948604095025" type="TileText">
                                                             <param id="0" name="Text">tokenat(Refran,loopindex(&quot;SolutionIndex&quot;),&quot;-&quot;)</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="397054685499548" type="TileText">
+                                                            <param id="0" name="Visibility">1</param>
                                                         </action>
                                                     </actions>
                                                     <sub-events>

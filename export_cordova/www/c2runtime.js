@@ -20862,14 +20862,14 @@ cr.behaviors.Flash = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.AJAX,
+	cr.plugins_.Touch,
+	cr.plugins_.Arr,
+	cr.plugins_.Browser,
 	cr.plugins_.Keyboard,
 	cr.plugins_.Mouse,
 	cr.plugins_.Sprite,
 	cr.plugins_.Text,
 	cr.plugins_.TiledBg,
-	cr.plugins_.Touch,
-	cr.plugins_.Arr,
-	cr.plugins_.Browser,
 	cr.behaviors.Flash,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.system_object.prototype.cnds.OnLayoutStart,

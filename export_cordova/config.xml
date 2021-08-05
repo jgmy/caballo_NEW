@@ -18,10 +18,11 @@
 
 
 	<preference name="deployment-target" value="8.0" />
-	<preference name="android-minSdkVersion" value="21" />
+	<preference name="android-minSdkVersion" value="14" />
 	<access origin="*" />
 
 	<plugin name="cordova-custom-config" />
+	<plugin name="cordova-plugin-crosswalk-webview" />
 	<plugin name="cordova-plugin-file" />
 	<plugin name="cordova-plugin-inappbrowser" />
 	<plugin name="cordova-plugin-statusbar" />

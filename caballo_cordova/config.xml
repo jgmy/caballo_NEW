@@ -1,32 +1,35 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.josemoyablogspotcom.caballofull" version="2.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Caballo_Fullscreen</name>
-    <description>Salto del Caballo, el pasatiempo clásico.</description>
-    <author email="saltocaballo@apagada.com" href="http://josemoya.blogspot.com">Jose Gabriel Moya Yangüela</author>
-    <icon density="xxxhdpi" height="256" src="www/icon-256.png" width="256" />
-    <icon density="xhdpi" height="128" src="www/icon-128.png" width="128" />
-    <preference name="android-targetSdkVersion" value="19" />
-    <preference name="xwalkMultipleApk" value="false" />
-    <preference name="orientation" value="default" />
-    <preference name="fullscreen" value="true" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
-    <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist">
-        <true />
-    </config-file>
-    <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist">
-        <false />
-    </config-file>
-    <preference name="deployment-target" value="8.0" />
-    <preference name="android-minSdkVersion" value="19" />
-    <access origin="*" />
-    <plugin name="cordova-custom-config" />
-    <plugin name="cordova-plugin-crosswalk-webview" />
-    <plugin name="cordova-plugin-file" />
-    <plugin name="cordova-plugin-inappbrowser" />
-    <plugin name="cordova-plugin-statusbar" />
-    <plugin name="cordova-plugin-whitelist" />
-    <plugin name="cordova-plugin-wkwebview-engine" />
-    <engine name="ios" />
-    <engine name="android" spec="~7.0.0" />
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget id="com.josemoyablogspotcom.caballofull" version="2.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>Caballo_Fullscreen</name>
+	<description>Salto del Caballo, el pasatiempo clásico.</description>
+	<author href="http://josemoya.blogspot.com" email="saltocaballo@apagada.com">Jose Gabriel Moya Yangüela</author>
+
+	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
+	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
+
+	<preference name="android-targetSdkVersion" value="30" />
+
+	<preference name="orientation" value="default" />
+	<preference name="fullscreen" value="true" />
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="AllowInlineMediaPlayback" value="true" />
+
+	<config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
+	<config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
+
+
+	<preference name="deployment-target" value="10.0" />
+	<preference name="android-minSdkVersion" value="21" />
+	<access origin="*" />
+
+	<plugin name="cordova-custom-config" />
+	<plugin name="cordova-plugin-file" />
+	<plugin name="cordova-plugin-inappbrowser" />
+	<plugin name="cordova-plugin-statusbar" />
+	<plugin name="cordova-plugin-whitelist" />
+	<plugin name="cordova-plugin-wkwebview-engine" />
+
+
+	<engine name="ios" />
+	<engine name="android" />
 </widget>

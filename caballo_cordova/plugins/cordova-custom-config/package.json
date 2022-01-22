@@ -39,7 +39,8 @@
   },
   "cordova_name": "cordova-custom-config",
   "dependencies": {
-    "colors": "^1.1.2",
+/* should be less than 1.4.0*/
+    "colors": "1.1.2",
     "elementtree": "^0.1.6",
     "lodash": "^4.3.0",
     "plist": "github:xiangpingmeng/plist.js",

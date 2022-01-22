@@ -43,7 +43,8 @@
     "elementtree": "^0.1.6",
     "lodash": "^4.3.0",
     "plist": "github:xiangpingmeng/plist.js",
-    "shelljs": "^0.7.0",
+   /* "shelljs": "^0.7.0",*/
+    "shelljs": "^0.8.5",
     "tostr": "^0.1.0",
     "xcode": "^1.0.0"
   },
